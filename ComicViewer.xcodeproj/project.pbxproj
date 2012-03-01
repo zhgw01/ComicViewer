@@ -20,6 +20,7 @@
 		111B7B0214FF9CF0009141C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AE314FF9CEF009141C0 /* Foundation.framework */; };
 		111B7B0A14FF9CF0009141C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 111B7B0814FF9CF0009141C0 /* InfoPlist.strings */; };
 		111B7B0D14FF9CF0009141C0 /* ComicViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7B0C14FF9CF0009141C0 /* ComicViewerTests.m */; };
+		111B7B1B14FF9EA5009141C0 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7B1A14FF9EA5009141C0 /* libSDWebImage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +38,22 @@
 		111B7AE114FF9CEF009141C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		111B7AE314FF9CEF009141C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		111B7AE514FF9CEF009141C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		111B7AE914FF9CEF009141C0 /* ComicViewer-Info.plist */ = {isa = PBXFileReference; path = "ComicViewer-Info.plist"; sourceTree = "<group>"; };
+		111B7AE914FF9CEF009141C0 /* ComicViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ComicViewer-Info.plist"; sourceTree = "<group>"; };
 		111B7AEB14FF9CEF009141C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		111B7AED14FF9CEF009141C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		111B7AEF14FF9CEF009141C0 /* ComicViewer-Prefix.pch */ = {isa = PBXFileReference; path = "ComicViewer-Prefix.pch"; sourceTree = "<group>"; };
-		111B7AF014FF9CEF009141C0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		111B7AEF14FF9CEF009141C0 /* ComicViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComicViewer-Prefix.pch"; sourceTree = "<group>"; };
+		111B7AF014FF9CEF009141C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		111B7AF114FF9CEF009141C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		111B7AF314FF9CEF009141C0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		111B7AF314FF9CEF009141C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		111B7AF414FF9CEF009141C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		111B7AF714FF9CEF009141C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		111B7AFE14FF9CF0009141C0 /* ComicViewerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicViewerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111B7AFF14FF9CF0009141C0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		111B7B0714FF9CF0009141C0 /* ComicViewerTests-Info.plist */ = {isa = PBXFileReference; path = "ComicViewerTests-Info.plist"; sourceTree = "<group>"; };
+		111B7B0714FF9CF0009141C0 /* ComicViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ComicViewerTests-Info.plist"; sourceTree = "<group>"; };
 		111B7B0914FF9CF0009141C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		111B7B0B14FF9CF0009141C0 /* ComicViewerTests.h */ = {isa = PBXFileReference; path = ComicViewerTests.h; sourceTree = "<group>"; };
+		111B7B0B14FF9CF0009141C0 /* ComicViewerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComicViewerTests.h; sourceTree = "<group>"; };
 		111B7B0C14FF9CF0009141C0 /* ComicViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComicViewerTests.m; sourceTree = "<group>"; };
+		111B7B1A14FF9EA5009141C0 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libSDWebImage.a; path = "Libraries/SDWebImage/build/Release-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111B7B1B14FF9EA5009141C0 /* libSDWebImage.a in Frameworks */,
 				111B7AE214FF9CEF009141C0 /* UIKit.framework in Frameworks */,
 				111B7AE414FF9CEF009141C0 /* Foundation.framework in Frameworks */,
 				111B7AE614FF9CEF009141C0 /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +84,7 @@
 		111B7AD214FF9CEF009141C0 = {
 			isa = PBXGroup;
 			children = (
+				111B7B1A14FF9EA5009141C0 /* libSDWebImage.a */,
 				111B7AE714FF9CEF009141C0 /* ComicViewer */,
 				111B7B0514FF9CF0009141C0 /* ComicViewerTests */,
 				111B7AE014FF9CEF009141C0 /* Frameworks */,
@@ -329,7 +333,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -347,7 +351,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -361,7 +365,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
 				INFOPLIST_FILE = "ComicViewer/ComicViewer-Info.plist";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -372,7 +378,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
 				INFOPLIST_FILE = "ComicViewer/ComicViewer-Info.plist";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
