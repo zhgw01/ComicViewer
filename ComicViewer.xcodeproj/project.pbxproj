@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		111B7AE214FF9CEF009141C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AE114FF9CEF009141C0 /* UIKit.framework */; };
+		111B7AE414FF9CEF009141C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AE314FF9CEF009141C0 /* Foundation.framework */; };
+		111B7AE614FF9CEF009141C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AE514FF9CEF009141C0 /* CoreGraphics.framework */; };
+		111B7AEC14FF9CEF009141C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 111B7AEA14FF9CEF009141C0 /* InfoPlist.strings */; };
+		111B7AEE14FF9CEF009141C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7AED14FF9CEF009141C0 /* main.m */; };
+		111B7AF214FF9CEF009141C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7AF114FF9CEF009141C0 /* AppDelegate.m */; };
+		111B7AF514FF9CEF009141C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7AF414FF9CEF009141C0 /* ViewController.m */; };
+		111B7AF814FF9CEF009141C0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111B7AF614FF9CEF009141C0 /* ViewController.xib */; };
+		111B7B0014FF9CF0009141C0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AFF14FF9CF0009141C0 /* SenTestingKit.framework */; };
+		111B7B0114FF9CF0009141C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AE114FF9CEF009141C0 /* UIKit.framework */; };
+		111B7B0214FF9CF0009141C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111B7AE314FF9CEF009141C0 /* Foundation.framework */; };
+		111B7B0A14FF9CF0009141C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 111B7B0814FF9CF0009141C0 /* InfoPlist.strings */; };
+		111B7B0D14FF9CF0009141C0 /* ComicViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7B0C14FF9CF0009141C0 /* ComicViewerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		111B7B0314FF9CF0009141C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 111B7AD414FF9CEF009141C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 111B7ADC14FF9CEF009141C0;
+			remoteInfo = ComicViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		111B7ADD14FF9CEF009141C0 /* ComicViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		111B7AE114FF9CEF009141C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		111B7AE314FF9CEF009141C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		111B7AE514FF9CEF009141C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		111B7AE914FF9CEF009141C0 /* ComicViewer-Info.plist */ = {isa = PBXFileReference; path = "ComicViewer-Info.plist"; sourceTree = "<group>"; };
+		111B7AEB14FF9CEF009141C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		111B7AED14FF9CEF009141C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		111B7AEF14FF9CEF009141C0 /* ComicViewer-Prefix.pch */ = {isa = PBXFileReference; path = "ComicViewer-Prefix.pch"; sourceTree = "<group>"; };
+		111B7AF014FF9CEF009141C0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		111B7AF114FF9CEF009141C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		111B7AF314FF9CEF009141C0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		111B7AF414FF9CEF009141C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		111B7AF714FF9CEF009141C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		111B7AFE14FF9CF0009141C0 /* ComicViewerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicViewerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		111B7AFF14FF9CF0009141C0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		111B7B0714FF9CF0009141C0 /* ComicViewerTests-Info.plist */ = {isa = PBXFileReference; path = "ComicViewerTests-Info.plist"; sourceTree = "<group>"; };
+		111B7B0914FF9CF0009141C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		111B7B0B14FF9CF0009141C0 /* ComicViewerTests.h */ = {isa = PBXFileReference; path = ComicViewerTests.h; sourceTree = "<group>"; };
+		111B7B0C14FF9CF0009141C0 /* ComicViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComicViewerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		111B7ADA14FF9CEF009141C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111B7AE214FF9CEF009141C0 /* UIKit.framework in Frameworks */,
+				111B7AE414FF9CEF009141C0 /* Foundation.framework in Frameworks */,
+				111B7AE614FF9CEF009141C0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		111B7AFA14FF9CEF009141C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111B7B0014FF9CF0009141C0 /* SenTestingKit.framework in Frameworks */,
+				111B7B0114FF9CF0009141C0 /* UIKit.framework in Frameworks */,
+				111B7B0214FF9CF0009141C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		111B7AD214FF9CEF009141C0 = {
+			isa = PBXGroup;
+			children = (
+				111B7AE714FF9CEF009141C0 /* ComicViewer */,
+				111B7B0514FF9CF0009141C0 /* ComicViewerTests */,
+				111B7AE014FF9CEF009141C0 /* Frameworks */,
+				111B7ADE14FF9CEF009141C0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		111B7ADE14FF9CEF009141C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				111B7ADD14FF9CEF009141C0 /* ComicViewer.app */,
+				111B7AFE14FF9CF0009141C0 /* ComicViewerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		111B7AE014FF9CEF009141C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				111B7AE114FF9CEF009141C0 /* UIKit.framework */,
+				111B7AE314FF9CEF009141C0 /* Foundation.framework */,
+				111B7AE514FF9CEF009141C0 /* CoreGraphics.framework */,
+				111B7AFF14FF9CF0009141C0 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		111B7AE714FF9CEF009141C0 /* ComicViewer */ = {
+			isa = PBXGroup;
+			children = (
+				111B7AF014FF9CEF009141C0 /* AppDelegate.h */,
+				111B7AF114FF9CEF009141C0 /* AppDelegate.m */,
+				111B7AF314FF9CEF009141C0 /* ViewController.h */,
+				111B7AF414FF9CEF009141C0 /* ViewController.m */,
+				111B7AF614FF9CEF009141C0 /* ViewController.xib */,
+				111B7AE814FF9CEF009141C0 /* Supporting Files */,
+			);
+			path = ComicViewer;
+			sourceTree = "<group>";
+		};
+		111B7AE814FF9CEF009141C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				111B7AE914FF9CEF009141C0 /* ComicViewer-Info.plist */,
+				111B7AEA14FF9CEF009141C0 /* InfoPlist.strings */,
+				111B7AED14FF9CEF009141C0 /* main.m */,
+				111B7AEF14FF9CEF009141C0 /* ComicViewer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		111B7B0514FF9CF0009141C0 /* ComicViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				111B7B0B14FF9CF0009141C0 /* ComicViewerTests.h */,
+				111B7B0C14FF9CF0009141C0 /* ComicViewerTests.m */,
+				111B7B0614FF9CF0009141C0 /* Supporting Files */,
+			);
+			path = ComicViewerTests;
+			sourceTree = "<group>";
+		};
+		111B7B0614FF9CF0009141C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				111B7B0714FF9CF0009141C0 /* ComicViewerTests-Info.plist */,
+				111B7B0814FF9CF0009141C0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		111B7ADC14FF9CEF009141C0 /* ComicViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 111B7B1014FF9CF0009141C0 /* Build configuration list for PBXNativeTarget "ComicViewer" */;
+			buildPhases = (
+				111B7AD914FF9CEF009141C0 /* Sources */,
+				111B7ADA14FF9CEF009141C0 /* Frameworks */,
+				111B7ADB14FF9CEF009141C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComicViewer;
+			productName = ComicViewer;
+			productReference = 111B7ADD14FF9CEF009141C0 /* ComicViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		111B7AFD14FF9CEF009141C0 /* ComicViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 111B7B1314FF9CF0009141C0 /* Build configuration list for PBXNativeTarget "ComicViewerTests" */;
+			buildPhases = (
+				111B7AF914FF9CEF009141C0 /* Sources */,
+				111B7AFA14FF9CEF009141C0 /* Frameworks */,
+				111B7AFB14FF9CEF009141C0 /* Resources */,
+				111B7AFC14FF9CEF009141C0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				111B7B0414FF9CF0009141C0 /* PBXTargetDependency */,
+			);
+			name = ComicViewerTests;
+			productName = ComicViewerTests;
+			productReference = 111B7AFE14FF9CF0009141C0 /* ComicViewerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		111B7AD414FF9CEF009141C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = autodesk;
+			};
+			buildConfigurationList = 111B7AD714FF9CEF009141C0 /* Build configuration list for PBXProject "ComicViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 111B7AD214FF9CEF009141C0;
+			productRefGroup = 111B7ADE14FF9CEF009141C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				111B7ADC14FF9CEF009141C0 /* ComicViewer */,
+				111B7AFD14FF9CEF009141C0 /* ComicViewerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		111B7ADB14FF9CEF009141C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111B7AEC14FF9CEF009141C0 /* InfoPlist.strings in Resources */,
+				111B7AF814FF9CEF009141C0 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		111B7AFB14FF9CEF009141C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111B7B0A14FF9CF0009141C0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		111B7AFC14FF9CEF009141C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		111B7AD914FF9CEF009141C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111B7AEE14FF9CEF009141C0 /* main.m in Sources */,
+				111B7AF214FF9CEF009141C0 /* AppDelegate.m in Sources */,
+				111B7AF514FF9CEF009141C0 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		111B7AF914FF9CEF009141C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111B7B0D14FF9CF0009141C0 /* ComicViewerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		111B7B0414FF9CF0009141C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 111B7ADC14FF9CEF009141C0 /* ComicViewer */;
+			targetProxy = 111B7B0314FF9CF0009141C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		111B7AEA14FF9CEF009141C0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111B7AEB14FF9CEF009141C0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		111B7AF614FF9CEF009141C0 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111B7AF714FF9CEF009141C0 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		111B7B0814FF9CF0009141C0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111B7B0914FF9CF0009141C0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		111B7B0E14FF9CF0009141C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		111B7B0F14FF9CF0009141C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		111B7B1114FF9CF0009141C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
+				INFOPLIST_FILE = "ComicViewer/ComicViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		111B7B1214FF9CF0009141C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
+				INFOPLIST_FILE = "ComicViewer/ComicViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		111B7B1414FF9CF0009141C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ComicViewer.app/ComicViewer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
+				INFOPLIST_FILE = "ComicViewerTests/ComicViewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		111B7B1514FF9CF0009141C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ComicViewer.app/ComicViewer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
+				INFOPLIST_FILE = "ComicViewerTests/ComicViewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		111B7AD714FF9CEF009141C0 /* Build configuration list for PBXProject "ComicViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111B7B0E14FF9CF0009141C0 /* Debug */,
+				111B7B0F14FF9CF0009141C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		111B7B1014FF9CF0009141C0 /* Build configuration list for PBXNativeTarget "ComicViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111B7B1114FF9CF0009141C0 /* Debug */,
+				111B7B1214FF9CF0009141C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		111B7B1314FF9CF0009141C0 /* Build configuration list for PBXNativeTarget "ComicViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111B7B1414FF9CF0009141C0 /* Debug */,
+				111B7B1514FF9CF0009141C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 111B7AD414FF9CEF009141C0 /* Project object */;
+}
