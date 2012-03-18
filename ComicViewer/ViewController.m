@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "VolumnController.h"
 
 @implementation ViewController
 
@@ -21,14 +22,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,6 +53,16 @@
 {
     // Return YES for supported orientations
     return YES;
+}
+
+- (IBAction)clickButton:(id)sender {
+    [self viewBook];
+}
+
+-(void) viewBook
+{
+    VolumnController* controller = [[[VolumnController alloc] initWithNibName:@"VolumnView" bundle:nil] autorelease];
+    [self.view addSubview:controller.view];
 }
 
 @end

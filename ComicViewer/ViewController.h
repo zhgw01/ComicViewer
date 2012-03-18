@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class VolumnController;
+
 @interface ViewController : UIViewController
+{
+    VolumnController *_volController;
+}
+
+- (IBAction)clickButton:(id)sender;
+-(void) viewBook;
+
 
 @end
