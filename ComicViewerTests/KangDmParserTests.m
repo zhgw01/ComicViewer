@@ -10,11 +10,6 @@
 
 @implementation KangDmParserTests
 
-// All code under test must be linked into the Unit Test bundle
-- (void)testMath
-{
-    STAssertTrue((1 + 1) == 2, @"Compiler isn't feeling well today :-(");
-}
 
 - (void) setUp
 {
@@ -28,12 +23,15 @@
 
 -(void) testTotalPages
 {
-    
+    STAssertTrue(_parser.totalPages == 102, @"You get wrong page numbers");
 }
 
 -(void) testURL
 {
+    NSURL *sourceUrl = [NSURL URLWithString:@"http://1.kangdm.com/comic_img/lz/t/%E9%93%81%E9%81%93%E5%B0%91%E5%A5%B3/%E5%85%A8%E4%B8%80%E5%8D%B7/001.jpg"];
     
+    NSURL *targetURL = [_parser urlForIndex:1];
+    STAssertTrue([sourceUrl isEqual:targetURL], @"You may not implement urlForIndex properly");
 }
 
 @end

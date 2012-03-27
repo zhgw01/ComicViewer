@@ -7,17 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WebParser.h"
 
-@interface KangDmParser : NSObject
+@interface KangDmParser : WebParser
 {
-    NSURL *_url;
-    NSUInteger _totalPages;
     NSString *_baseUrl;
-    NSUInteger _tpf;
+    NSUInteger _tpf; 
+    NSURL *_url; //the url to pass
 }
 
-@property (readonly) NSUInteger totalPages;
-@property (nonatomic, copy) NSURL *url;
 
 -(id) initWithUrl:(NSURL *) url;
 - (NSURL *) urlForIndex: (NSUInteger) index;

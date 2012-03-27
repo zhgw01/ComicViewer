@@ -10,4 +10,13 @@
 
 @implementation WebParser
 
+@synthesize totalPages = _totalPages;
+
+
+- (NSURL *) urlForIndex: (NSUInteger) index
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 @end

@@ -12,15 +12,13 @@
 @interface KangDmParser () 
 
 - (void) parseUrl;
-- (NSString *) convertGB2312ToUTF8:(NSString *) content;
 
 @end
 
 
 @implementation KangDmParser
 
-@synthesize totalPages = _totalPages;
-@synthesize url = _url;
+
 
 #pragma mark - ctor/dtor
 
@@ -37,7 +35,11 @@
 - (void) dealloc
 {
     [_url release];
+    [_baseUrl release];
 }
+
+
+#pragma mark - internal Implementation function
 
 - (void) parseStatement: (NSString *) statement
 {
@@ -55,6 +57,7 @@
         if ([variable rangeOfString:@"volpic"].location != NSNotFound) {
             NSString *path = [[value componentsSeparatedByString:@"'"] objectAtIndex:1];
             _baseUrl = [@"http://1.kangdm.com/comic_img/" stringByAppendingString:path];
+            [_baseUrl retain];
             NSLog(@"url: %@", _baseUrl);
         }
         
@@ -68,68 +71,24 @@
     
 }
 
-- (NSString *) convertGB2312ToUTF8:(NSString *)content
-{
-    return nil;
-}
 
-- (void) parseScriptContent:(NSString *) content
+- (void) parseUrl
 {
-
+    NSURL* url = [NSURL URLWithString:@"index.js" relativeToURL:_url];
+    NSLog(@"parse url: %@", [url absoluteString]);
+       
+    NSString *content = [NSString stringWithContentsOfURL:url encoding:0x80000632 error:nil];
     NSCharacterSet *endSet = [NSCharacterSet characterSetWithCharactersInString:@";\n"];
-   
+    
     NSArray *statements = [content componentsSeparatedByCharactersInSet:endSet];
     for (NSString *statment in statements) {
         [self parseStatement:statment];
     }
-       
-}
 
-#pragma mark - internal Implementation function
-- (void) parseUrl
-{
-    NSURL* url = [NSURL URLWithString:@"index.js" relativeToURL:_url];
-    
-    NSLog(@"url: %@", [url absoluteString]);
-    
-    /*
-    
-    AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:url]];
-    
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"index.js"];
-    NSLog(@"file: %@", path);
-    
-    NSOutputStream *file = [[NSOutputStream alloc] initToFileAtPath:path append:NO];
-    request.outputStream = file;
-    
-    [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSString *content = [[NSString alloc] initWithData:responseObject encoding:NSUTF16StringEncoding];
-        NSString *content = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:nil];
-        [self parseScriptContent:content];
-        NSLog(@"content: %@", content);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"Error: %@", error);
-    }];
-   
-    [request start];
-     */
-    
-    NSString *content = [NSString stringWithContentsOfURL:url encoding:0x80000632 error:nil];
-    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"tmp.txt"];
-    [content writeToFile:path atomically:NO encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"path: %@", path);
-    [self parseScriptContent:content];
 }
 
 
 #pragma mark - functions for client
-
--(void) setUrl:(NSURL *)url
-{
-    _url = [url copy];
-    [self parseUrl];
-}
 
 
 -(NSURL *) urlForIndex:(NSUInteger)index

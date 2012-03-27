@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ * Abstract Base Class, Parse a Volume or a Chaper of an Online Comic
+ */
 @interface WebParser : NSObject
+{
+    NSUInteger _totalPages;
+}
+
+@property (readonly) NSUInteger totalPages;
+
+- (NSURL *) urlForIndex: (NSUInteger) index;
 
 @end

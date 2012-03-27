@@ -66,6 +66,7 @@
 		11BD622D1514BD760005568C /* VolumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BD622C1514BD760005568C /* VolumnView.xib */; };
 		11F3F67D151581DE00F2D50B /* KangDmParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F67C151581DE00F2D50B /* KangDmParser.m */; };
 		11F3F6A01515966A00F2D50B /* KangDmParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F69F1515966A00F2D50B /* KangDmParserTests.m */; };
+		11F3F6B11521B57700F2D50B /* WebParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F6B01521B57700F2D50B /* WebParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,8 @@
 		11F3F67C151581DE00F2D50B /* KangDmParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KangDmParser.m; path = WebParser/KangDmParser.m; sourceTree = "<group>"; };
 		11F3F69E1515966A00F2D50B /* KangDmParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KangDmParserTests.h; sourceTree = "<group>"; };
 		11F3F69F1515966A00F2D50B /* KangDmParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KangDmParserTests.m; sourceTree = "<group>"; };
+		11F3F6AF1521B57700F2D50B /* WebParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebParser.h; path = WebParser/WebParser.h; sourceTree = "<group>"; };
+		11F3F6B01521B57700F2D50B /* WebParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebParser.m; path = WebParser/WebParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +383,8 @@
 			children = (
 				11F3F67B151581DE00F2D50B /* KangDmParser.h */,
 				11F3F67C151581DE00F2D50B /* KangDmParser.m */,
+				11F3F6AF1521B57700F2D50B /* WebParser.h */,
+				11F3F6B01521B57700F2D50B /* WebParser.m */,
 			);
 			name = WebParser;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 				11BD6228151499EE0005568C /* HTMLParser.m in Sources */,
 				11BD622B1514ACA60005568C /* VolumnController.m in Sources */,
 				11F3F67D151581DE00F2D50B /* KangDmParser.m in Sources */,
+				11F3F6B11521B57700F2D50B /* WebParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
