@@ -9,6 +9,10 @@
 #import "ViewController.h"
 #import "VolumnController.h"
 
+#import "KangDmParser.h"
+
+#import "UIImageView+AFNetworking.h"
+
 @implementation ViewController
 
 - (void)didReceiveMemoryWarning
@@ -61,8 +65,15 @@
 
 -(void) viewBook
 {
+    
     VolumnController* controller = [[[VolumnController alloc] initWithNibName:@"VolumnView" bundle:nil] autorelease];
     [self.view addSubview:controller.view];
+     
+    /*
+    KangDmParser *parser = [[KangDmParser alloc] initWithUrl:[NSURL URLWithString:@"http://www.kangdm.com/comic/6553/tdsn-qyj/index.js"]];
+    NSLog(@"parser url: %@", parser.url);
+    NSURL *url = [parser urlForIndex:1];
+     */   
 }
 
 @end

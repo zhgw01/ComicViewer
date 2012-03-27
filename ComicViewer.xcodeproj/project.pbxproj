@@ -45,9 +45,6 @@
 		117F1D95150637C40071BC2A /* WebViewController-Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7F150637C40071BC2A /* WebViewController-Forward.png */; };
 		117F1D9815063DDE0071BC2A /* ComicPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 117F1D9715063DDD0071BC2A /* ComicPageView.m */; };
 		117F1DCA1507A37C0071BC2A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1DC91507A37B0071BC2A /* libxml2.dylib */; };
-		11BD61451510430C0005568C /* DocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD61441510430C0005568C /* DocumentView.m */; };
-		11BD6149151045950005568C /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD6148151045950005568C /* Logging.m */; };
-		11BD614C151045A10005568C /* BasicAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD614B151045A10005568C /* BasicAnimation.m */; };
 		11BD614E151046100005568C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BD614D151046100005568C /* libsqlite3.dylib */; };
 		11BD6150151049370005568C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BD614F151049370005568C /* QuartzCore.framework */; };
 		11BD61F515137B510005568C /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD61F415137B510005568C /* Comic.m */; };
@@ -67,6 +64,8 @@
 		11BD6228151499EE0005568C /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD6226151499EE0005568C /* HTMLParser.m */; };
 		11BD622B1514ACA60005568C /* VolumnController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD622A1514ACA50005568C /* VolumnController.m */; };
 		11BD622D1514BD760005568C /* VolumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BD622C1514BD760005568C /* VolumnView.xib */; };
+		11F3F67D151581DE00F2D50B /* KangDmParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F67C151581DE00F2D50B /* KangDmParser.m */; };
+		11F3F6A01515966A00F2D50B /* KangDmParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F69F1515966A00F2D50B /* KangDmParserTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,12 +125,6 @@
 		117F1D9615063DDC0071BC2A /* ComicPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicPageView.h; sourceTree = "<group>"; };
 		117F1D9715063DDD0071BC2A /* ComicPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicPageView.m; sourceTree = "<group>"; };
 		117F1DC91507A37B0071BC2A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		11BD61431510430C0005568C /* DocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentView.h; sourceTree = "<group>"; };
-		11BD61441510430C0005568C /* DocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentView.m; sourceTree = "<group>"; };
-		11BD6147151045950005568C /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
-		11BD6148151045950005568C /* Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logging.m; sourceTree = "<group>"; };
-		11BD614A151045A10005568C /* BasicAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimation.h; sourceTree = "<group>"; };
-		11BD614B151045A10005568C /* BasicAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimation.m; sourceTree = "<group>"; };
 		11BD614D151046100005568C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		11BD614F151049370005568C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		11BD61F315137B510005568C /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
@@ -169,6 +162,10 @@
 		11BD62291514ACA50005568C /* VolumnController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumnController.h; sourceTree = "<group>"; };
 		11BD622A1514ACA50005568C /* VolumnController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumnController.m; sourceTree = "<group>"; };
 		11BD622C1514BD760005568C /* VolumnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VolumnView.xib; sourceTree = "<group>"; };
+		11F3F67B151581DE00F2D50B /* KangDmParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KangDmParser.h; path = WebParser/KangDmParser.h; sourceTree = "<group>"; };
+		11F3F67C151581DE00F2D50B /* KangDmParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KangDmParser.m; path = WebParser/KangDmParser.m; sourceTree = "<group>"; };
+		11F3F69E1515966A00F2D50B /* KangDmParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KangDmParserTests.h; sourceTree = "<group>"; };
+		11F3F69F1515966A00F2D50B /* KangDmParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KangDmParserTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +231,7 @@
 		111B7AE714FF9CEF009141C0 /* ComicViewer */ = {
 			isa = PBXGroup;
 			children = (
+				11F3F67A1515815E00F2D50B /* WebParser */,
 				11BD6222151499EE0005568C /* HTMLParser */,
 				11BD621E15147A170005568C /* GDataXML */,
 				11BD61FD15147A0E0005568C /* AFNetworking */,
@@ -275,6 +273,8 @@
 				111B7B0B14FF9CF0009141C0 /* ComicViewerTests.h */,
 				111B7B0C14FF9CF0009141C0 /* ComicViewerTests.m */,
 				111B7B0614FF9CF0009141C0 /* Supporting Files */,
+				11F3F69E1515966A00F2D50B /* KangDmParserTests.h */,
+				11F3F69F1515966A00F2D50B /* KangDmParserTests.m */,
 			);
 			path = ComicViewerTests;
 			sourceTree = "<group>";
@@ -291,12 +291,6 @@
 		117F1CDC150637BD0071BC2A /* cooliris */ = {
 			isa = PBXGroup;
 			children = (
-				11BD614A151045A10005568C /* BasicAnimation.h */,
-				11BD614B151045A10005568C /* BasicAnimation.m */,
-				11BD6147151045950005568C /* Logging.h */,
-				11BD6148151045950005568C /* Logging.m */,
-				11BD61431510430C0005568C /* DocumentView.h */,
-				11BD61441510430C0005568C /* DocumentView.m */,
 				117F1D37150637BD0071BC2A /* ZoomView.h */,
 				117F1D38150637BD0071BC2A /* ZoomView.m */,
 			);
@@ -380,6 +374,15 @@
 			);
 			path = HTMLParser;
 			sourceTree = SOURCE_ROOT;
+		};
+		11F3F67A1515815E00F2D50B /* WebParser */ = {
+			isa = PBXGroup;
+			children = (
+				11F3F67B151581DE00F2D50B /* KangDmParser.h */,
+				11F3F67C151581DE00F2D50B /* KangDmParser.m */,
+			);
+			name = WebParser;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -516,9 +519,6 @@
 				111B7AF514FF9CEF009141C0 /* ViewController.m in Sources */,
 				117F1D68150637BD0071BC2A /* ZoomView.m in Sources */,
 				117F1D9815063DDE0071BC2A /* ComicPageView.m in Sources */,
-				11BD61451510430C0005568C /* DocumentView.m in Sources */,
-				11BD6149151045950005568C /* Logging.m in Sources */,
-				11BD614C151045A10005568C /* BasicAnimation.m in Sources */,
 				11BD61F515137B510005568C /* Comic.m in Sources */,
 				11BD61F81514617A0005568C /* Volumn.m in Sources */,
 				11BD621415147A0F0005568C /* AFHTTPClient.m in Sources */,
@@ -535,6 +535,7 @@
 				11BD6227151499EE0005568C /* HTMLNode.m in Sources */,
 				11BD6228151499EE0005568C /* HTMLParser.m in Sources */,
 				11BD622B1514ACA60005568C /* VolumnController.m in Sources */,
+				11F3F67D151581DE00F2D50B /* KangDmParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				111B7B0D14FF9CF0009141C0 /* ComicViewerTests.m in Sources */,
+				11F3F6A01515966A00F2D50B /* KangDmParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +670,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
 				INFOPLIST_FILE = "ComicViewerTests/ComicViewerTests-Info.plist";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -685,6 +688,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ComicViewer/ComicViewer-Prefix.pch";
 				INFOPLIST_FILE = "ComicViewerTests/ComicViewerTests-Info.plist";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
