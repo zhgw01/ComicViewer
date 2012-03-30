@@ -13,6 +13,10 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#import "VolumnPhotoSource.h"
+#import "EGOPhotoViewController.h"
+
+
 @implementation ViewController
 
 - (void)didReceiveMemoryWarning
@@ -65,15 +69,29 @@
 
 -(void) viewBook
 {
-    
-    VolumnController* controller = [[[VolumnController alloc] initWithNibName:@"VolumnView" bundle:nil] autorelease];
+
+    /*
+    VolumnController* controller = [[[VolumnController alloc] initWithUrl:[NSURL URLWithString:@"http://www.kangdm.com/comic/6553/tdsn-qyj/"]] autorelease];
     [self.view addSubview:controller.view];
-     
+    */
+    
     /*
     KangDmParser *parser = [[KangDmParser alloc] initWithUrl:[NSURL URLWithString:@"http://www.kangdm.com/comic/6553/tdsn-qyj/index.js"]];
     NSLog(@"parser url: %@", parser.url);
     NSURL *url = [parser urlForIndex:1];
      */   
+    
+    VolumnPhotoSource *source = [[VolumnPhotoSource alloc] initWithVolumnURL:[NSURL URLWithString:@"http://www.kangdm.com/comic/7906/Q-and-A05j/"]];
+    EGOPhotoViewController *photoConroller = [[EGOPhotoViewController alloc] initWithPhotoSource:source];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoConroller];
+    navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentModalViewController:navController animated:YES];
+    
+    [navController release];
+    [photoConroller release];
+    [source release];
+
 }
 
 @end

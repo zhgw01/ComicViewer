@@ -25,6 +25,8 @@
 - (id) initWithUrl:(NSURL *)url
 {
     if ((self = [super init])) {
+        _totalPages = 0;
+        _tpf = 0;
         _url = [url copy];
         [self parseUrl];
     }
@@ -76,8 +78,15 @@
 {
     NSURL* url = [NSURL URLWithString:@"index.js" relativeToURL:_url];
     NSLog(@"parse url: %@", [url absoluteString]);
-       
-    NSString *content = [NSString stringWithContentsOfURL:url encoding:0x80000632 error:nil];
+    
+    NSError *error;
+    NSString *content = [NSString stringWithContentsOfURL:url encoding:0x80000632 error:&error];
+    
+    if (error) {
+        NSLog(@"Invalid Url : %@ with Error: %@", [url absoluteString], [error localizedDescription]);
+        return;
+    }
+    
     NSCharacterSet *endSet = [NSCharacterSet characterSetWithCharactersInString:@";\n"];
     
     NSArray *statements = [content componentsSeparatedByCharactersInSet:endSet];

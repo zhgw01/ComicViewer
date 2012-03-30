@@ -19,8 +19,10 @@
     Volumn *_vol;
     NSUInteger _currentPage;
     ComicPageView *_pageView;
-    UIActivityIndicatorView *_indicator;
+    NSURL *_url;
 }
+
+-(id) initWithUrl:(NSURL *) url;
 
 @property (retain) Volumn *vol;
 @property (nonatomic) NSUInteger page;

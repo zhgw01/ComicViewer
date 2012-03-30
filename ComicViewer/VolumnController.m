@@ -18,13 +18,13 @@
 @dynamic totalPages;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (id)initWithUrl:(NSURL *)url
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        _vol = [[Volumn alloc] initWithURL:[NSURL URLWithString:@"http://www.kangdm.com/comic/6553/tdsn-qyj/"]];
+    if (self = [super init]) {
+        _vol = [[Volumn alloc] initWithURL:url];
         _vol.delegate = self;
-        _currentPage = 0;
+        _currentPage = 0;       
     }
     return self;
 }
@@ -46,27 +46,42 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
+    UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.view = view;
+    self.view.autoresizesSubviews = YES;
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.view.backgroundColor = [UIColor whiteColor];
+    [view release];
+
 }
-*/
+
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (!_vol.started) {
+        [_vol performSelector:@selector(startDownloading) withObject:nil afterDelay:0.01];
+    }
+
+    
     _pageView = [[ComicPageView alloc] initWithTapTarget:self action:@selector(handleTap)];
     [self.view addSubview:_pageView];
-    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [self.view addSubview:_indicator];
 }
 
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    if (!_vol.started) {
+        [_vol startDownloading];
+    }
+    
     [self setPage:_currentPage];
     [super viewWillAppear:animated];
 }
@@ -96,9 +111,8 @@
     _currentPage = page;
     if (_currentPage <= _vol.totalPages) {
         [_pageView displayImage:[_vol.images objectAtIndex:_currentPage]];
-    } else {
-        [_indicator startAnimating];
-    }
+    } 
+    
     /*
     else {
         NSLog(@"Out of Range: %d", _currentPage);
@@ -121,7 +135,7 @@
 -(void) updateImageAtIndex:(NSUInteger)index
 {
     if (_currentPage == index) {
-        [_indicator stopAnimating];
+        
         [_pageView displayImage:[_vol.images objectAtIndex:_currentPage]];
     }
 }

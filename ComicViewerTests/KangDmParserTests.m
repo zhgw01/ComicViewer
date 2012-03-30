@@ -34,4 +34,11 @@
     STAssertTrue([sourceUrl isEqual:targetURL], @"You may not implement urlForIndex properly");
 }
 
+-(void)testWrongURL
+{
+    KangDmParser *anotherParser = [[KangDmParser alloc] initWithUrl:nil];
+    STAssertTrue(anotherParser.totalPages == 0, @"You get wrong page numbers");
+    [anotherParser release];
+}
+
 @end
