@@ -8,6 +8,17 @@
 
 #import "KangDmParser.h"
 #import "AFHTTPRequestOperation.h"
+#import "EGOCache.h"
+
+
+#define KEYTOTAL @"total"
+#define KEYFORAMTSTRING @"formatstring"
+
+
+inline static NSString* keyForURL(NSURL* url) {
+	return [NSString stringWithFormat:@"KangDmParser-%u", [[url description] hash]];
+}
+
 
 @interface KangDmParser () 
 
@@ -28,6 +39,7 @@
         _totalPages = 0;
         _tpf = 0;
         _url = [url copy];
+        _dictionary = [[NSMutableDictionary alloc] init];
         [self parseUrl];
     }
     
@@ -38,6 +50,8 @@
 {
     [_url release];
     [_baseUrl release];
+    [_dictionary release];
+    [_formatString release];
 }
 
 
@@ -76,10 +90,18 @@
 
 - (void) parseUrl
 {
+    NSDictionary *dict = [[EGOCache currentCache] dictionaryForKey:keyForURL(_url)];
+    if (dict) {
+        _totalPages = [[dict objectForKey:KEYTOTAL] integerValue];
+        _formatString = [[dict objectForKey:KEYFORAMTSTRING] retain];
+        
+        return;
+    }
+    
     NSURL* url = [NSURL URLWithString:@"index.js" relativeToURL:_url];
     NSLog(@"parse url: %@", [url absoluteString]);
     
-    NSError *error;
+    NSError *error = nil;
     NSString *content = [NSString stringWithContentsOfURL:url encoding:0x80000632 error:&error];
     
     if (error) {
@@ -94,6 +116,12 @@
         [self parseStatement:statment];
     }
 
+    _formatString = [[NSString stringWithFormat:@"%@%%0%dd.jpg",_baseUrl, _tpf + 1] retain];
+    
+    //cache
+    [_dictionary setObject:[NSNumber numberWithInteger:_totalPages] forKey:KEYTOTAL];
+    [_dictionary setObject:_formatString forKey:KEYFORAMTSTRING]; 
+    [[EGOCache currentCache] setDictionary:_dictionary forKey:keyForURL(_url)];
 }
 
 
@@ -102,8 +130,7 @@
 
 -(NSURL *) urlForIndex:(NSUInteger)index
 {
-    NSString *formatString = [NSString stringWithFormat:@"%@%%0%dd.jpg",_baseUrl, _tpf + 1];
-    NSString *urlString = [[NSString stringWithFormat:formatString, index] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [[NSString stringWithFormat:_formatString, index] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:urlString];
     NSLog(@"index url: %@", url);
     

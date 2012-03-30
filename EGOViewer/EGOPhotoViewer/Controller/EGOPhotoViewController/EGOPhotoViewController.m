@@ -907,6 +907,7 @@
 	
 	NSInteger _index = [self centerPhotoIndex];
 	if (_index >= [self.photoSource numberOfPhotos] || _index < 0) {
+        
 		return;
 	}
 	

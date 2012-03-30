@@ -49,6 +49,11 @@
 - (void)setString:(NSString*)aString forKey:(NSString*)key;
 - (void)setString:(NSString*)aString forKey:(NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
+- (NSDictionary*)dictionaryForKey:(NSString*)key;
+- (void)setDictionary:(NSDictionary*)aDictionary forKey:(NSString *)aKey;
+- (void)setDictionary:(NSDictionary *)aDictionary forKey:(NSString *)aKey withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+
+
 #if TARGET_OS_IPHONE
 - (UIImage*)imageForKey:(NSString*)key;
 - (void)setImage:(UIImage*)anImage forKey:(NSString*)key;

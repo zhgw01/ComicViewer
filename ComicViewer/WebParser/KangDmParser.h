@@ -14,6 +14,8 @@
     NSString *_baseUrl;
     NSUInteger _tpf; 
     NSURL *_url; //the url to pass
+    NSString *_formatString;
+    NSMutableDictionary *_dictionary;
 }
 
 

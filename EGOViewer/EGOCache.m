@@ -34,7 +34,7 @@
 	#define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) return;
 #endif
 
-
+#define KDICTIONARYKEY @"EGODictionary"
 
 static NSString* _EGOCacheDirectory;
 
@@ -214,6 +214,37 @@ static EGOCache* __instance;
 - (void)setString:(NSString*)aString forKey:(NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval {
 	[self setData:[aString dataUsingEncoding:NSUTF8StringEncoding] forKey:key withTimeoutInterval:timeoutInterval];
 }
+
+
+#pragma mark -
+#pragma mark Dictionary methods
+
+- (NSDictionary*)dictionaryForKey:(NSString *)key {
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:[self dataForKey:key]];
+    NSDictionary *dictionary = [unarchiver decodeObjectForKey:KDICTIONARYKEY];
+    [unarchiver finishDecoding];
+    [unarchiver release];
+    
+    return dictionary;
+}
+
+- (void) setDictionary:(NSDictionary *)aDictionary forKey:(NSString *)aKey {
+   
+    [self setDictionary:aDictionary forKey:aKey withTimeoutInterval:self.defaultTimeoutInterval];
+}
+
+- (void) setDictionary:(NSDictionary *)aDictionary forKey:(NSString *)aKey withTimeoutInterval:(NSTimeInterval)timeoutInterval {
+    
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:aDictionary forKey:KDICTIONARYKEY];
+    [archiver finishEncoding];
+    [self setData:data forKey:aKey withTimeoutInterval:timeoutInterval];
+    
+    [data release];
+    [archiver release];
+}
+
 
 #pragma mark -
 #pragma mark Image methds

@@ -36,7 +36,7 @@
         NSMutableArray *tempPhotos = [[[NSMutableArray alloc] init] autorelease];
         
         NSUInteger totalPages = parser.totalPages;
-        for (NSUInteger i = 0; i < totalPages; ++i) {
+        for (NSUInteger i = 1; i <= totalPages; ++i) {
             NSURL *url = [parser urlForIndex:i];
             NSString *name = [NSString stringWithFormat:@"Page %d", i];
             VolumnPhoto *photo = [[VolumnPhoto alloc] initWithImageURL:url name:name];
