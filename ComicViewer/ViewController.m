@@ -16,6 +16,8 @@
 #import "VolumnPhotoSource.h"
 #import "EGOPhotoViewController.h"
 
+#import "GridViewController.h"
+
 
 @implementation ViewController
 
@@ -81,6 +83,7 @@
     NSURL *url = [parser urlForIndex:1];
      */   
     
+    /*
     VolumnPhotoSource *source = [[VolumnPhotoSource alloc] initWithVolumnURL:[NSURL URLWithString:@"http://www.kangdm.com/comic/7906/Q-and-A05j/"]];
     EGOPhotoViewController *photoConroller = [[EGOPhotoViewController alloc] initWithPhotoSource:source];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoConroller];
@@ -91,6 +94,10 @@
     [navController release];
     [photoConroller release];
     [source release];
+     */
+    
+    GridViewController *gridController = [[GridViewController alloc] init];
+    [self presentModalViewController:gridController animated:YES];
 
 }
 
