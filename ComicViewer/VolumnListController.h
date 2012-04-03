@@ -12,7 +12,7 @@
 
 @interface VolumnListController : UITableViewController
 {
-    NSArray *_items;
+    NSMutableArray *_items;
     NSURL *_comicUrl; // the url to get volumn list
 }
 

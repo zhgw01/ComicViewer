@@ -149,10 +149,18 @@ inline static NSString* keyForURL(NSURL* url) {
 @interface KangDmVolumnListParser()     
 
 - (void) parseUrl;
+- (void) parseContent: (NSString *) content error: (NSError **) error;
 
 @end
 
 @implementation KangDmVolumnListParser
+
+@synthesize enc = _enc;
+
+- (void) commonInit
+{
+    _enc = 0x80000632;
+}
 
 -(id) initWithUrl:(NSURL *)url
 {
@@ -164,6 +172,35 @@ inline static NSString* keyForURL(NSURL* url) {
     
     return self;
 }
+
+
+- (id) initWithString: (NSString *) string forUrl:(NSURL *)url error: (NSError **) error
+{
+    if (self = [super init]) {
+        _list = [[NSMutableArray alloc] init];
+        _url = [url copy];
+        [self commonInit];
+        [self parseContent:string error:error];
+    }
+    
+    return self;
+    
+}
+
+- (id) initwithData:(NSData *)data forUrl:(NSURL *)url error:(NSError **)error
+{
+    if (self = [super init]) {
+        _url = [url copy];
+        [self commonInit];
+        _list = [[NSMutableArray alloc] init];
+        NSString *content = [[NSString alloc] initWithData:data encoding:0x80000632];
+        [self parseContent:content error:error];
+    }
+    
+    return self;
+}
+
+
 
 - (void) dealloc
 {
@@ -177,8 +214,13 @@ inline static NSString* keyForURL(NSURL* url) {
    
     
     NSString *html = [NSString stringWithContentsOfURL:_url encoding:0x80000632 error:nil];
-    NSError *error = nil;
-    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    [self parseContent: html error:nil];
+   
+}
+
+- (void) parseContent: (NSString *) content error: (NSError **) error
+{
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:content error:error];
     
     if (error) {
         NSLog(@"Error: %@", error);
@@ -204,8 +246,9 @@ inline static NSString* keyForURL(NSURL* url) {
         }
     }
     
-       
+    
     [parser release];
+
 }
 
 @end

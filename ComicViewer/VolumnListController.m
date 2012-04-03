@@ -7,6 +7,11 @@
 //
 
 #import "VolumnListController.h"
+#import "KangDmParser.h"
+#import "AFHTTPRequestOperation.h"
+#import "VolumnPhotoSource.h"
+#import "EGOPhotoViewController.h"
+
 
 
 @implementation VolumnListController
@@ -18,7 +23,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        _items = [[NSArray alloc] init];
+        _items = [[NSMutableArray alloc] init];
         _comicUrl = nil;
     }
     return self;
@@ -44,6 +49,30 @@
 {
     [_comicUrl release];
     _comicUrl = [comicUrl retain];
+    
+    AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:_comicUrl]];
+    request.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        VolumnListParser *parser = [[KangDmVolumnListParser alloc] initwithData:responseObject forUrl:_comicUrl error:nil];
+        int insertIdx = [_items count];
+        NSMutableArray *indexArray = [[NSMutableArray alloc] init];
+        for (VolumnItem *item in parser.list) {
+            [_items insertObject:item atIndex:insertIdx];
+            [indexArray addObject:[NSIndexPath indexPathForRow:insertIdx inSection:0]];
+            ++insertIdx;
+        }
+        
+        [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationRight];
+        [indexArray release];
+        [parser release];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error to Get List URL: %@ with Error: %@", _comicUrl, error);
+    }];
+    
+    [request start];
+    [request release];
 }
 
 
@@ -111,12 +140,13 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
-  //  VolumnItem *item = [_items objectAtIndex:indexPath.row];
-  //  cell.textLabel.text = item.title;
+    VolumnItem *item = [_items objectAtIndex:indexPath.row];
+    cell.textLabel.text = item.title;
+    cell.detailTextLabel.text = [item.url absoluteString];
     
     return cell;
 }
@@ -126,14 +156,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    //TODO: reduce souce parse time to improve view response
+    
+    VolumnItem *item = [_items objectAtIndex:indexPath.row];
+    VolumnPhotoSource *source = [[VolumnPhotoSource alloc] initWithVolumnURL: item.url];
+    EGOPhotoViewController *photoConroller = [[EGOPhotoViewController alloc] initWithPhotoSource:source];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoConroller];
+    navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentModalViewController:navController animated:YES];
+    
+    [navController release];
+    [photoConroller release];
+    [source release];
 }
 
 @end

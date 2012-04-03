@@ -36,7 +36,7 @@
 
 - (void) dealloc
 {
-    [_list dealloc];
+    [_list release];
     _list = nil;
 }
 

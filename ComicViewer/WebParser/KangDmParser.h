@@ -30,8 +30,14 @@
 @interface KangDmVolumnListParser : VolumnListParser {
     
     NSURL *_url;
+    NSStringEncoding _enc;
 }
 
 - (id) initWithUrl:(NSURL *) url;
+
+-(id)initWithString:(NSString*)string forUrl:(NSURL *) url error:(NSError**)error;
+-(id)initwithData:(NSData *)data forUrl:(NSURL *) url error:(NSError **)error;
+
+@property (nonatomic) NSStringEncoding enc;
 
 @end

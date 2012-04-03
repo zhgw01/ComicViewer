@@ -98,8 +98,10 @@
      */
     
     VolumnListController *listController = [[VolumnListController alloc] initWithStyle:UITableViewStylePlain];
+     listController.comicUrl = [NSURL URLWithString:@"http://www.kangdm.com/comic/8931/"];
     [self.view addSubview:listController.view];
-    [listController release];
+    //[listController release];
+    //should be deallocted somewhere, not here
 
 }
 
