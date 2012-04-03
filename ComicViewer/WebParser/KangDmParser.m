@@ -9,6 +9,7 @@
 #import "KangDmParser.h"
 #import "AFHTTPRequestOperation.h"
 #import "EGOCache.h"
+#import "HTMLParser.h"
 
 
 #define KEYTOTAL @"total"
@@ -52,6 +53,7 @@ inline static NSString* keyForURL(NSURL* url) {
     [_baseUrl release];
     [_dictionary release];
     [_formatString release];
+    [super dealloc];
 }
 
 
@@ -90,6 +92,10 @@ inline static NSString* keyForURL(NSURL* url) {
 
 - (void) parseUrl
 {
+    if (nil == _url) {
+        return;
+    }
+    
     NSDictionary *dict = [[EGOCache currentCache] dictionaryForKey:keyForURL(_url)];
     if (dict) {
         _totalPages = [[dict objectForKey:KEYTOTAL] integerValue];
@@ -138,3 +144,70 @@ inline static NSString* keyForURL(NSURL* url) {
 }
 
 @end
+
+
+@interface KangDmVolumnListParser()     
+
+- (void) parseUrl;
+
+@end
+
+@implementation KangDmVolumnListParser
+
+-(id) initWithUrl:(NSURL *)url
+{
+    if (self = [super init]) {
+        _list = [[NSMutableArray alloc] init];
+        _url = [url copy];
+        [self parseUrl];
+    }
+    
+    return self;
+}
+
+- (void) dealloc
+{
+    [_url release];
+    [super dealloc];
+}
+
+
+- (void) parseUrl
+{
+   
+    
+    NSString *html = [NSString stringWithContentsOfURL:_url encoding:0x80000632 error:nil];
+    NSError *error = nil;
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    
+    if (error) {
+        NSLog(@"Error: %@", error);
+        return;
+    }
+    
+    HTMLNode *bodyNode = [parser body];
+    
+    HTMLNode *divComicNode = [bodyNode findChildWithAttribute:@"id" matchingName:@"comiczj" allowPartial:NO];
+    if (divComicNode) {
+        NSArray *listNodes = [divComicNode findChildTags:@"a"];
+        for (HTMLNode *hrefNode in listNodes) {
+            NSString *ref = [hrefNode getAttributeNamed:@"href"];
+            NSString *title = [[hrefNode firstChild] rawContents];
+            
+            VolumnItem *item = [[VolumnItem alloc] init];
+            NSURL *itemUrl = [NSURL URLWithString:ref relativeToURL:_url];
+            item.url = itemUrl;
+            item.title = title;
+            
+            [_list addObject:item];
+            [item release];
+        }
+    }
+    
+       
+    [parser release];
+}
+
+@end
+
+

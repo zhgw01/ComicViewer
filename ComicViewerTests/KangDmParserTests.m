@@ -21,6 +21,7 @@
     [_parser release];
 }
 
+
 -(void) testTotalPages
 {
     STAssertTrue(_parser.totalPages == 102, @"You get wrong page numbers");
@@ -40,5 +41,18 @@
     STAssertTrue(anotherParser.totalPages == 0, @"You get wrong page numbers");
     [anotherParser release];
 }
+
+-(void)testZListParser
+{
+    
+    KangDmVolumnListParser *listParser = [[KangDmVolumnListParser alloc] initWithUrl:[NSURL URLWithString:@"http://www.kangdm.com/comic/8931/"]];
+    
+    NSUInteger count = [listParser.list count];
+    
+    STAssertTrue(23 == count, @"list parser error");
+    
+    [listParser release];
+}
+
 
 @end

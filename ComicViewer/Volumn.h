@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WebParser.h"
+#import "VolumnParser.h"
 
 @protocol VolumnDelegate <NSObject>
 @optional
@@ -27,7 +27,7 @@
     NSMutableArray *_images;
     NSOperationQueue *_queue; //put in the view controller? It could be
     id<VolumnDelegate> _delegate;
-    WebParser *_parser;
+    VolumnParser *_parser;
     BOOL _started;
 }
 

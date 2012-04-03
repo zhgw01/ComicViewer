@@ -18,6 +18,7 @@
 
 #import "GridViewController.h"
 
+#import "VolumnListController.h"
 
 @implementation ViewController
 
@@ -96,8 +97,9 @@
     [source release];
      */
     
-    GridViewController *gridController = [[GridViewController alloc] init];
-    [self presentModalViewController:gridController animated:YES];
+    VolumnListController *listController = [[VolumnListController alloc] initWithStyle:UITableViewStylePlain];
+    [self.view addSubview:listController.view];
+    [listController release];
 
 }
 

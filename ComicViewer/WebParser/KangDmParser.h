@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WebParser.h"
+#import "VolumnParser.h"
 
-@interface KangDmParser : WebParser
+@interface KangDmParser : VolumnParser
 {
     NSString *_baseUrl;
     NSUInteger _tpf; 
@@ -22,5 +22,16 @@
 -(id) initWithUrl:(NSURL *) url;
 - (NSURL *) urlForIndex: (NSUInteger) index;
 
+@end
+
+
+
+
+@interface KangDmVolumnListParser : VolumnListParser {
+    
+    NSURL *_url;
+}
+
+- (id) initWithUrl:(NSURL *) url;
 
 @end

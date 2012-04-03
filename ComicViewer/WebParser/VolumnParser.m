@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 autodesk. All rights reserved.
 //
 
-#import "WebParser.h"
+#import "VolumnParser.h"
 
-@implementation WebParser
+@implementation VolumnParser
 
 @synthesize totalPages = _totalPages;
 
@@ -17,6 +17,27 @@
 {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
+}
+
+@end
+
+
+@implementation VolumnItem
+
+@synthesize title = _title;
+@synthesize url = _url;
+
+@end
+
+
+@implementation VolumnListParser
+
+@synthesize list = _list;
+
+- (void) dealloc
+{
+    [_list dealloc];
+    _list = nil;
 }
 
 @end
