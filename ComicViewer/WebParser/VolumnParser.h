@@ -25,7 +25,7 @@
 
 
 /*
- *Abstract Base, Prase Volumn List 
+ *Abstract Base Class, Parse Volumn List 
  */
 
 @interface VolumnItem : NSObject {
@@ -47,3 +47,50 @@
 @property (nonatomic,readonly) NSArray *list;
 
 @end
+
+/*
+ * Abstract Base Class, Parse Comic List
+ */
+
+@interface ComicItem : NSObject {
+@private
+    NSString *_title;
+    NSURL *_thumbnail;
+    NSURL *_url;
+    NSString *_newestVolumn;
+    NSURL *_newestVolunmnUrl;
+    NSDate *_updateDate;
+}
+
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSURL *thumbnail;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic, retain) NSString *newestVolumn;
+@property (nonatomic, retain) NSURL  *newestVolumnUrl;
+@property (nonatomic, retain) NSDate *updateDate;
+
+@end
+
+
+@interface ComicParser : NSObject {
+@protected
+    NSMutableArray *_list;
+    
+    //TODO: support search
+}
+
+@property (nonatomic, readonly) NSArray *list;
+
+-(NSURL *) getURlForTitle:(NSString *) title;
+
+@end
+
+
+
+
+
+
+
+
+
+

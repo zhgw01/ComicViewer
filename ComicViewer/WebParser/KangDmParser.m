@@ -12,9 +12,10 @@
 #import "HTMLParser.h"
 
 
+#pragma mark Parser For Volumn
+
 #define KEYTOTAL @"total"
 #define KEYFORAMTSTRING @"formatstring"
-
 
 inline static NSString* keyForURL(NSURL* url) {
 	return [NSString stringWithFormat:@"KangDmParser-%u", [[url description] hash]];
@@ -32,7 +33,7 @@ inline static NSString* keyForURL(NSURL* url) {
 
 
 
-#pragma mark - ctor/dtor
+#pragma mark ctor/dtor
 
 - (id) initWithUrl:(NSURL *)url
 {
@@ -57,7 +58,7 @@ inline static NSString* keyForURL(NSURL* url) {
 }
 
 
-#pragma mark - internal Implementation function
+#pragma mark  internal Implementation function
 
 - (void) parseStatement: (NSString *) statement
 {
@@ -131,7 +132,7 @@ inline static NSString* keyForURL(NSURL* url) {
 }
 
 
-#pragma mark - functions for client
+#pragma mark functions for client
 
 
 -(NSURL *) urlForIndex:(NSUInteger)index
@@ -145,6 +146,8 @@ inline static NSString* keyForURL(NSURL* url) {
 
 @end
 
+
+#pragma mark - Parser for Volumn List
 
 @interface KangDmVolumnListParser()     
 
@@ -252,5 +255,141 @@ inline static NSString* keyForURL(NSURL* url) {
 }
 
 @end
+
+
+#pragma mark - Parser for Comic
+
+#define KANGDMURL @"http://www.kangdm.com"
+
+@interface KangDmComicParser()     
+
+- (void) parseUrl;
+- (void) parseContent: (NSString *) content error: (NSError **) error;
+
+@end
+
+
+
+@implementation KangDmComicParser
+
+- (id) initWithUrl:(NSURL *)url
+{
+    if (self = [super init]) {
+        _list = [[NSMutableArray alloc] init];
+        _url = [url copy];
+        _baseUrl = [[NSURL URLWithString:[KANGDMURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] retain];
+        [self parseUrl];
+    }
+    
+    return self;
+}
+
+
+- (void) dealloc
+{
+    [_url release];
+    _url = nil;
+    [_baseUrl release];
+    _baseUrl = nil;
+    [super dealloc];
+}
+
+#pragma mark internal implementation
+
+- (void) parseUrl
+{
+    /*
+    AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:_url]];
+    
+    [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError *error = nil;
+        NSString *content = [[NSString alloc] initWithData:responseObject encoding:0x80000632];
+        [self parseContent:content error:&error];
+
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Fail to parse comic list for Url: %@ with Error: %@", [_url absoluteString], [error localizedDescription]);
+    }];
+    
+    [[NSOperationQueue currentQueue] addOperation:request];
+    [request release];
+     */
+    
+    NSString *html = [NSString stringWithContentsOfURL:_url encoding:0x80000632 error:nil];
+    [self parseContent: html error:nil];
+
+    
+     
+}
+
+
+- (void) parseContent:(NSString *)content error:(NSError **)error
+{
+    
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:content error:error];
+    
+    if (error) {
+        NSLog(@"Error: %@", error);
+        return;
+    }
+    
+    HTMLNode *bodyNode = [parser body];
+    
+    HTMLNode *divComicNode = [bodyNode findChildWithAttribute:@"class" matchingName:@"main_left" allowPartial:NO];
+    if (divComicNode) {
+        NSArray *listNodes = [divComicNode findChildTags:@"li"];
+        for (HTMLNode *listNode in listNodes) {
+            
+            HTMLNode *imageNode = [listNode findChildTag:@"img"];
+            HTMLNode *comicNode = [[listNode findChildTag:@"h1"] findChildTag:@"a"];
+            HTMLNode *volumnNode = [[listNode findChildTag:@"h2"] findChildTag:@"a"];
+            HTMLNode *dateNode = [listNode findChildTag:@"font"];
+            
+            ComicItem *item = [[ComicItem alloc] init];
+            
+            NSString *image = [imageNode getAttributeNamed:@"src"];
+            NSURL *imageUrl = [NSURL URLWithString:[image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            item.thumbnail = imageUrl;
+            
+            NSString *ref = [comicNode getAttributeNamed:@"href"];
+            NSURL *itemUrl = [NSURL URLWithString:[[KANGDMURL stringByAppendingString:ref] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            item.url = itemUrl;
+            
+            NSString *title = [[comicNode firstChild] rawContents];
+            item.title = title;
+            
+            NSString *volumn = [volumnNode getAttributeNamed:@"href"];
+            NSURL *volumnUrl = [NSURL URLWithString:volumn relativeToURL:_baseUrl];
+            item.newestVolumnUrl = volumnUrl;
+            
+            NSString *volumnTitle = [[volumnNode firstChild] rawContents];
+            item.newestVolumn = volumnTitle;
+            
+            NSString *date = [[dateNode firstChild] rawContents];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSDate *dateFromString = [dateFormatter dateFromString:date];
+            item.updateDate = dateFromString;
+            [dateFormatter release];
+            
+            [_list addObject:item];
+            [item release];
+            
+
+        }
+        
+            
+    }
+    
+    
+    [parser release];
+
+    
+}
+
+
+@end
+
 
 

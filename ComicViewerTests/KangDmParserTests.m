@@ -42,7 +42,7 @@
     [anotherParser release];
 }
 
--(void)testZListParser
+-(void)testListParser
 {
     
     KangDmVolumnListParser *listParser = [[KangDmVolumnListParser alloc] initWithUrl:[NSURL URLWithString:@"http://www.kangdm.com/comic/8931/"]];
@@ -52,6 +52,16 @@
     STAssertTrue(23 == count, @"list parser error");
     
     [listParser release];
+}
+
+-(void)testComicParser
+{
+    KangDmComicParser *comicParser = [[KangDmComicParser alloc] initWithUrl:[NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai.html"]];
+    
+    NSUInteger count = [comicParser.list count];
+    NSLog(@"count = %d", count);
+    
+    [comicParser release];
 }
 
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VolumnParser.h"
 
+
 @interface KangDmParser : VolumnParser
 {
     NSString *_baseUrl;
@@ -39,5 +40,16 @@
 -(id)initwithData:(NSData *)data forUrl:(NSURL *) url error:(NSError **)error;
 
 @property (nonatomic) NSStringEncoding enc;
+
+@end
+
+
+@interface KangDmComicParser : ComicParser {
+@private
+    NSURL *_url;
+    NSURL *_baseUrl;
+}
+
+- (id) initWithUrl: (NSURL *) url;
 
 @end
