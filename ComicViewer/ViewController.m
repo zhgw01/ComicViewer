@@ -16,7 +16,6 @@
 #import "VolumnPhotoSource.h"
 #import "EGOPhotoViewController.h"
 
-#import "GridViewController.h"
 
 #import "VolumnListController.h"
 
