@@ -18,6 +18,9 @@
 
 
 #import "VolumnListController.h"
+#import "ComicGridViewController.h"
+
+
 
 @implementation ViewController
 
@@ -96,12 +99,19 @@
     [source release];
      */
     
+    /*
     VolumnListController *listController = [[VolumnListController alloc] initWithStyle:UITableViewStylePlain];
      listController.comicUrl = [NSURL URLWithString:@"http://www.kangdm.com/comic/8931/"];
     [self.view addSubview:listController.view];
     //[listController release];
     //should be deallocted somewhere, not here
-
+     */
+    
+    
+    ComicGridViewController *gridController = [[ComicGridViewController alloc] initWithNibName:nil bundle:nil];
+    [self.view addSubview:gridController.view];
+    //gridController.comicUrl = [NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai_2.html"];
+    [gridController performSelector:@selector(setComicUrl:) withObject:[NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai_2.html"] afterDelay:0.1];
 }
 
 @end

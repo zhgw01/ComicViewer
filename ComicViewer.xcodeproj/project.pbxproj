@@ -45,14 +45,6 @@
 		1124E5031525B797004532B6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1124E5021525B796004532B6 /* MessageUI.framework */; };
 		1178F5C2152882CD00FB11E9 /* VolumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178F5C1152882CC00FB11E9 /* VolumnListController.m */; };
 		117F1D68150637BD0071BC2A /* ZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 117F1D38150637BD0071BC2A /* ZoomView.m */; };
-		117F1D80150637C40071BC2A /* DocumentView-Shadow-Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D6A150637C40071BC2A /* DocumentView-Shadow-Left.png */; };
-		117F1D81150637C40071BC2A /* DocumentView-Shadow-Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D6B150637C40071BC2A /* DocumentView-Shadow-Right.png */; };
-		117F1D82150637C40071BC2A /* ExtendedPageControl-Info-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D6C150637C40071BC2A /* ExtendedPageControl-Info-Off.png */; };
-		117F1D83150637C40071BC2A /* ExtendedPageControl-Info-On.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D6D150637C40071BC2A /* ExtendedPageControl-Info-On.png */; };
-		117F1D84150637C40071BC2A /* ExtendedPageControl-Item-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D6E150637C40071BC2A /* ExtendedPageControl-Item-Off.png */; };
-		117F1D85150637C40071BC2A /* ExtendedPageControl-Item-On.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D6F150637C40071BC2A /* ExtendedPageControl-Item-On.png */; };
-		117F1D86150637C40071BC2A /* FileSystemView-Directory.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D70150637C40071BC2A /* FileSystemView-Directory.png */; };
-		117F1D87150637C40071BC2A /* FileSystemView-File.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D71150637C40071BC2A /* FileSystemView-File.png */; };
 		117F1D88150637C40071BC2A /* GridView-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D72150637C40071BC2A /* GridView-Background.png */; };
 		117F1D89150637C40071BC2A /* MovieView-Button-Disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D73150637C40071BC2A /* MovieView-Button-Disabled.png */; };
 		117F1D8A150637C40071BC2A /* MovieView-Button-Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D74150637C40071BC2A /* MovieView-Button-Off.png */; };
@@ -64,11 +56,28 @@
 		117F1D90150637C40071BC2A /* OverlayView-Arrow-Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7A150637C40071BC2A /* OverlayView-Arrow-Right.png */; };
 		117F1D91150637C40071BC2A /* OverlayView-Arrow-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7B150637C40071BC2A /* OverlayView-Arrow-Top.png */; };
 		117F1D92150637C40071BC2A /* OverlayView-Contents.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7C150637C40071BC2A /* OverlayView-Contents.png */; };
-		117F1D93150637C40071BC2A /* TextIndex-StopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7D150637C40071BC2A /* TextIndex-StopWords.txt */; };
 		117F1D94150637C40071BC2A /* WebViewController-Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7E150637C40071BC2A /* WebViewController-Back.png */; };
 		117F1D95150637C40071BC2A /* WebViewController-Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D7F150637C40071BC2A /* WebViewController-Forward.png */; };
 		117F1D9815063DDE0071BC2A /* ComicPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 117F1D9715063DDD0071BC2A /* ComicPageView.m */; };
 		117F1DCA1507A37C0071BC2A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1DC91507A37B0071BC2A /* libxml2.dylib */; };
+		11ADCFAD152DCBF50038387A /* AQGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCF93152DCBF50038387A /* AQGridView.m */; };
+		11ADCFAE152DCBF50038387A /* AQGridViewAnimatorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCF95152DCBF50038387A /* AQGridViewAnimatorItem.m */; };
+		11ADCFAF152DCBF50038387A /* AQGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCF98152DCBF50038387A /* AQGridViewCell.m */; };
+		11ADCFB0152DCBF50038387A /* AQGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCF9A152DCBF50038387A /* AQGridViewController.m */; };
+		11ADCFB1152DCBF50038387A /* AQGridViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCF9C152DCBF50038387A /* AQGridViewData.m */; };
+		11ADCFB2152DCBF50038387A /* AQGridViewUpdateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCF9E152DCBF50038387A /* AQGridViewUpdateInfo.m */; };
+		11ADCFB3152DCBF50038387A /* AQGridViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFA0152DCBF50038387A /* AQGridViewUpdateItem.m */; };
+		11ADCFB4152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFA2152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.m */; };
+		11ADCFB5152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFA4152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.m */; };
+		11ADCFB6152DCBF50038387A /* AQGridSelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 11ADCFA6152DCBF50038387A /* AQGridSelection.png */; };
+		11ADCFB7152DCBF50038387A /* AQGridSelectionGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11ADCFA7152DCBF50038387A /* AQGridSelectionGray.png */; };
+		11ADCFB8152DCBF50038387A /* AQGridSelectionGrayBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 11ADCFA8152DCBF50038387A /* AQGridSelectionGrayBlue.png */; };
+		11ADCFB9152DCBF50038387A /* AQGridSelectionGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 11ADCFA9152DCBF50038387A /* AQGridSelectionGreen.png */; };
+		11ADCFBA152DCBF50038387A /* AQGridSelectionRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 11ADCFAA152DCBF50038387A /* AQGridSelectionRed.png */; };
+		11ADCFBB152DCBF50038387A /* UIColor+AQGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFAC152DCBF50038387A /* UIColor+AQGridView.m */; };
+		11ADCFBE152DD4B20038387A /* ComicGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFBD152DD4B10038387A /* ComicGridViewController.m */; };
+		11ADCFC1152DE75D0038387A /* ComicGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFC0152DE75C0038387A /* ComicGridViewCell.m */; };
+		11ADD02E152F201D0038387A /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11ADD02D152F201B0038387A /* Cell.xib */; };
 		11BD614E151046100005568C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BD614D151046100005568C /* libsqlite3.dylib */; };
 		11BD6150151049370005568C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BD614F151049370005568C /* QuartzCore.framework */; };
 		11BD61F515137B510005568C /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD61F415137B510005568C /* Comic.m */; };
@@ -163,14 +172,6 @@
 		1178F5C1152882CC00FB11E9 /* VolumnListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumnListController.m; sourceTree = "<group>"; };
 		117F1D37150637BD0071BC2A /* ZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomView.h; sourceTree = "<group>"; };
 		117F1D38150637BD0071BC2A /* ZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomView.m; sourceTree = "<group>"; };
-		117F1D6A150637C40071BC2A /* DocumentView-Shadow-Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DocumentView-Shadow-Left.png"; sourceTree = "<group>"; };
-		117F1D6B150637C40071BC2A /* DocumentView-Shadow-Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DocumentView-Shadow-Right.png"; sourceTree = "<group>"; };
-		117F1D6C150637C40071BC2A /* ExtendedPageControl-Info-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExtendedPageControl-Info-Off.png"; sourceTree = "<group>"; };
-		117F1D6D150637C40071BC2A /* ExtendedPageControl-Info-On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExtendedPageControl-Info-On.png"; sourceTree = "<group>"; };
-		117F1D6E150637C40071BC2A /* ExtendedPageControl-Item-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExtendedPageControl-Item-Off.png"; sourceTree = "<group>"; };
-		117F1D6F150637C40071BC2A /* ExtendedPageControl-Item-On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExtendedPageControl-Item-On.png"; sourceTree = "<group>"; };
-		117F1D70150637C40071BC2A /* FileSystemView-Directory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FileSystemView-Directory.png"; sourceTree = "<group>"; };
-		117F1D71150637C40071BC2A /* FileSystemView-File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FileSystemView-File.png"; sourceTree = "<group>"; };
 		117F1D72150637C40071BC2A /* GridView-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GridView-Background.png"; sourceTree = "<group>"; };
 		117F1D73150637C40071BC2A /* MovieView-Button-Disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MovieView-Button-Disabled.png"; sourceTree = "<group>"; };
 		117F1D74150637C40071BC2A /* MovieView-Button-Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MovieView-Button-Off.png"; sourceTree = "<group>"; };
@@ -182,12 +183,44 @@
 		117F1D7A150637C40071BC2A /* OverlayView-Arrow-Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OverlayView-Arrow-Right.png"; sourceTree = "<group>"; };
 		117F1D7B150637C40071BC2A /* OverlayView-Arrow-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OverlayView-Arrow-Top.png"; sourceTree = "<group>"; };
 		117F1D7C150637C40071BC2A /* OverlayView-Contents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OverlayView-Contents.png"; sourceTree = "<group>"; };
-		117F1D7D150637C40071BC2A /* TextIndex-StopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TextIndex-StopWords.txt"; sourceTree = "<group>"; };
 		117F1D7E150637C40071BC2A /* WebViewController-Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WebViewController-Back.png"; sourceTree = "<group>"; };
 		117F1D7F150637C40071BC2A /* WebViewController-Forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WebViewController-Forward.png"; sourceTree = "<group>"; };
 		117F1D9615063DDC0071BC2A /* ComicPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicPageView.h; sourceTree = "<group>"; };
 		117F1D9715063DDD0071BC2A /* ComicPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicPageView.m; sourceTree = "<group>"; };
 		117F1DC91507A37B0071BC2A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		11ADCF90152DCBF50038387A /* AQGridView+CellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQGridView+CellLayout.h"; sourceTree = "<group>"; };
+		11ADCF91152DCBF50038387A /* AQGridView+CellLocationDelegation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQGridView+CellLocationDelegation.h"; sourceTree = "<group>"; };
+		11ADCF92152DCBF50038387A /* AQGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridView.h; sourceTree = "<group>"; };
+		11ADCF93152DCBF50038387A /* AQGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridView.m; sourceTree = "<group>"; };
+		11ADCF94152DCBF50038387A /* AQGridViewAnimatorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewAnimatorItem.h; sourceTree = "<group>"; };
+		11ADCF95152DCBF50038387A /* AQGridViewAnimatorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewAnimatorItem.m; sourceTree = "<group>"; };
+		11ADCF96152DCBF50038387A /* AQGridViewCell+AQGridViewCellPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQGridViewCell+AQGridViewCellPrivate.h"; sourceTree = "<group>"; };
+		11ADCF97152DCBF50038387A /* AQGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewCell.h; sourceTree = "<group>"; };
+		11ADCF98152DCBF50038387A /* AQGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewCell.m; sourceTree = "<group>"; };
+		11ADCF99152DCBF50038387A /* AQGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewController.h; sourceTree = "<group>"; };
+		11ADCF9A152DCBF50038387A /* AQGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewController.m; sourceTree = "<group>"; };
+		11ADCF9B152DCBF50038387A /* AQGridViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewData.h; sourceTree = "<group>"; };
+		11ADCF9C152DCBF50038387A /* AQGridViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewData.m; sourceTree = "<group>"; };
+		11ADCF9D152DCBF50038387A /* AQGridViewUpdateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewUpdateInfo.h; sourceTree = "<group>"; };
+		11ADCF9E152DCBF50038387A /* AQGridViewUpdateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewUpdateInfo.m; sourceTree = "<group>"; };
+		11ADCF9F152DCBF50038387A /* AQGridViewUpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewUpdateItem.h; sourceTree = "<group>"; };
+		11ADCFA0152DCBF50038387A /* AQGridViewUpdateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewUpdateItem.m; sourceTree = "<group>"; };
+		11ADCFA1152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+AQIndexesOutsideSet.h"; sourceTree = "<group>"; };
+		11ADCFA2152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+AQIndexesOutsideSet.m"; sourceTree = "<group>"; };
+		11ADCFA3152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+AQIsSetContiguous.h"; sourceTree = "<group>"; };
+		11ADCFA4152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+AQIsSetContiguous.m"; sourceTree = "<group>"; };
+		11ADCFA6152DCBF50038387A /* AQGridSelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelection.png; sourceTree = "<group>"; };
+		11ADCFA7152DCBF50038387A /* AQGridSelectionGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionGray.png; sourceTree = "<group>"; };
+		11ADCFA8152DCBF50038387A /* AQGridSelectionGrayBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionGrayBlue.png; sourceTree = "<group>"; };
+		11ADCFA9152DCBF50038387A /* AQGridSelectionGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionGreen.png; sourceTree = "<group>"; };
+		11ADCFAA152DCBF50038387A /* AQGridSelectionRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionRed.png; sourceTree = "<group>"; };
+		11ADCFAB152DCBF50038387A /* UIColor+AQGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AQGridView.h"; sourceTree = "<group>"; };
+		11ADCFAC152DCBF50038387A /* UIColor+AQGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AQGridView.m"; sourceTree = "<group>"; };
+		11ADCFBC152DD4B10038387A /* ComicGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicGridViewController.h; sourceTree = "<group>"; };
+		11ADCFBD152DD4B10038387A /* ComicGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicGridViewController.m; sourceTree = "<group>"; };
+		11ADCFBF152DE75B0038387A /* ComicGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicGridViewCell.h; sourceTree = "<group>"; };
+		11ADCFC0152DE75C0038387A /* ComicGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicGridViewCell.m; sourceTree = "<group>"; };
+		11ADD02D152F201B0038387A /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		11BD614D151046100005568C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		11BD614F151049370005568C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		11BD61F315137B510005568C /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
@@ -298,6 +331,7 @@
 		111B7AE714FF9CEF009141C0 /* ComicViewer */ = {
 			isa = PBXGroup;
 			children = (
+				11ADCF8F152DCBF50038387A /* AQGridView */,
 				1124E4FA1525B3B7004532B6 /* ComicModel */,
 				1124E4BA1525B309004532B6 /* EGOViewer */,
 				11F3F67A1515815E00F2D50B /* WebParser */,
@@ -321,6 +355,11 @@
 				11BD622A1514ACA50005568C /* VolumnController.m */,
 				1178F5C0152882CC00FB11E9 /* VolumnListController.h */,
 				1178F5C1152882CC00FB11E9 /* VolumnListController.m */,
+				11ADCFBC152DD4B10038387A /* ComicGridViewController.h */,
+				11ADCFBD152DD4B10038387A /* ComicGridViewController.m */,
+				11ADCFBF152DE75B0038387A /* ComicGridViewCell.h */,
+				11ADCFC0152DE75C0038387A /* ComicGridViewCell.m */,
+				11ADD02D152F201B0038387A /* Cell.xib */,
 			);
 			path = ComicViewer;
 			sourceTree = "<group>";
@@ -507,14 +546,6 @@
 			isa = PBXGroup;
 			children = (
 				11F3F6B31522035B00F2D50B /* comicbook.png */,
-				117F1D6A150637C40071BC2A /* DocumentView-Shadow-Left.png */,
-				117F1D6B150637C40071BC2A /* DocumentView-Shadow-Right.png */,
-				117F1D6C150637C40071BC2A /* ExtendedPageControl-Info-Off.png */,
-				117F1D6D150637C40071BC2A /* ExtendedPageControl-Info-On.png */,
-				117F1D6E150637C40071BC2A /* ExtendedPageControl-Item-Off.png */,
-				117F1D6F150637C40071BC2A /* ExtendedPageControl-Item-On.png */,
-				117F1D70150637C40071BC2A /* FileSystemView-Directory.png */,
-				117F1D71150637C40071BC2A /* FileSystemView-File.png */,
 				117F1D72150637C40071BC2A /* GridView-Background.png */,
 				117F1D73150637C40071BC2A /* MovieView-Button-Disabled.png */,
 				117F1D74150637C40071BC2A /* MovieView-Button-Off.png */,
@@ -526,9 +557,51 @@
 				117F1D7A150637C40071BC2A /* OverlayView-Arrow-Right.png */,
 				117F1D7B150637C40071BC2A /* OverlayView-Arrow-Top.png */,
 				117F1D7C150637C40071BC2A /* OverlayView-Contents.png */,
-				117F1D7D150637C40071BC2A /* TextIndex-StopWords.txt */,
 				117F1D7E150637C40071BC2A /* WebViewController-Back.png */,
 				117F1D7F150637C40071BC2A /* WebViewController-Forward.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11ADCF8F152DCBF50038387A /* AQGridView */ = {
+			isa = PBXGroup;
+			children = (
+				11ADCF90152DCBF50038387A /* AQGridView+CellLayout.h */,
+				11ADCF91152DCBF50038387A /* AQGridView+CellLocationDelegation.h */,
+				11ADCF92152DCBF50038387A /* AQGridView.h */,
+				11ADCF93152DCBF50038387A /* AQGridView.m */,
+				11ADCF94152DCBF50038387A /* AQGridViewAnimatorItem.h */,
+				11ADCF95152DCBF50038387A /* AQGridViewAnimatorItem.m */,
+				11ADCF96152DCBF50038387A /* AQGridViewCell+AQGridViewCellPrivate.h */,
+				11ADCF97152DCBF50038387A /* AQGridViewCell.h */,
+				11ADCF98152DCBF50038387A /* AQGridViewCell.m */,
+				11ADCF99152DCBF50038387A /* AQGridViewController.h */,
+				11ADCF9A152DCBF50038387A /* AQGridViewController.m */,
+				11ADCF9B152DCBF50038387A /* AQGridViewData.h */,
+				11ADCF9C152DCBF50038387A /* AQGridViewData.m */,
+				11ADCF9D152DCBF50038387A /* AQGridViewUpdateInfo.h */,
+				11ADCF9E152DCBF50038387A /* AQGridViewUpdateInfo.m */,
+				11ADCF9F152DCBF50038387A /* AQGridViewUpdateItem.h */,
+				11ADCFA0152DCBF50038387A /* AQGridViewUpdateItem.m */,
+				11ADCFA1152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.h */,
+				11ADCFA2152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.m */,
+				11ADCFA3152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.h */,
+				11ADCFA4152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.m */,
+				11ADCFA5152DCBF50038387A /* Resources */,
+				11ADCFAB152DCBF50038387A /* UIColor+AQGridView.h */,
+				11ADCFAC152DCBF50038387A /* UIColor+AQGridView.m */,
+			);
+			path = AQGridView;
+			sourceTree = SOURCE_ROOT;
+		};
+		11ADCFA5152DCBF50038387A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11ADCFA6152DCBF50038387A /* AQGridSelection.png */,
+				11ADCFA7152DCBF50038387A /* AQGridSelectionGray.png */,
+				11ADCFA8152DCBF50038387A /* AQGridSelectionGrayBlue.png */,
+				11ADCFA9152DCBF50038387A /* AQGridSelectionGreen.png */,
+				11ADCFAA152DCBF50038387A /* AQGridSelectionRed.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -667,14 +740,6 @@
 			files = (
 				111B7AEC14FF9CEF009141C0 /* InfoPlist.strings in Resources */,
 				111B7AF814FF9CEF009141C0 /* ViewController.xib in Resources */,
-				117F1D80150637C40071BC2A /* DocumentView-Shadow-Left.png in Resources */,
-				117F1D81150637C40071BC2A /* DocumentView-Shadow-Right.png in Resources */,
-				117F1D82150637C40071BC2A /* ExtendedPageControl-Info-Off.png in Resources */,
-				117F1D83150637C40071BC2A /* ExtendedPageControl-Info-On.png in Resources */,
-				117F1D84150637C40071BC2A /* ExtendedPageControl-Item-Off.png in Resources */,
-				117F1D85150637C40071BC2A /* ExtendedPageControl-Item-On.png in Resources */,
-				117F1D86150637C40071BC2A /* FileSystemView-Directory.png in Resources */,
-				117F1D87150637C40071BC2A /* FileSystemView-File.png in Resources */,
 				117F1D88150637C40071BC2A /* GridView-Background.png in Resources */,
 				117F1D89150637C40071BC2A /* MovieView-Button-Disabled.png in Resources */,
 				117F1D8A150637C40071BC2A /* MovieView-Button-Off.png in Resources */,
@@ -686,7 +751,6 @@
 				117F1D90150637C40071BC2A /* OverlayView-Arrow-Right.png in Resources */,
 				117F1D91150637C40071BC2A /* OverlayView-Arrow-Top.png in Resources */,
 				117F1D92150637C40071BC2A /* OverlayView-Contents.png in Resources */,
-				117F1D93150637C40071BC2A /* TextIndex-StopWords.txt in Resources */,
 				117F1D94150637C40071BC2A /* WebViewController-Back.png in Resources */,
 				117F1D95150637C40071BC2A /* WebViewController-Forward.png in Resources */,
 				11F3F6B41522035B00F2D50B /* comicbook.png in Resources */,
@@ -701,6 +765,12 @@
 				1124E4F31525B30A004532B6 /* egopv_photo_placeholder@2x.png in Resources */,
 				1124E4F41525B30A004532B6 /* egopv_right.png in Resources */,
 				1124E4F51525B30A004532B6 /* egopv_right@2x.png in Resources */,
+				11ADCFB6152DCBF50038387A /* AQGridSelection.png in Resources */,
+				11ADCFB7152DCBF50038387A /* AQGridSelectionGray.png in Resources */,
+				11ADCFB8152DCBF50038387A /* AQGridSelectionGrayBlue.png in Resources */,
+				11ADCFB9152DCBF50038387A /* AQGridSelectionGreen.png in Resources */,
+				11ADCFBA152DCBF50038387A /* AQGridSelectionRed.png in Resources */,
+				11ADD02E152F201D0038387A /* Cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +840,18 @@
 				1124E4FE1525B42C004532B6 /* VolumnPhoto.m in Sources */,
 				1124E5011525B453004532B6 /* VolumnPhotoSource.m in Sources */,
 				1178F5C2152882CD00FB11E9 /* VolumnListController.m in Sources */,
+				11ADCFAD152DCBF50038387A /* AQGridView.m in Sources */,
+				11ADCFAE152DCBF50038387A /* AQGridViewAnimatorItem.m in Sources */,
+				11ADCFAF152DCBF50038387A /* AQGridViewCell.m in Sources */,
+				11ADCFB0152DCBF50038387A /* AQGridViewController.m in Sources */,
+				11ADCFB1152DCBF50038387A /* AQGridViewData.m in Sources */,
+				11ADCFB2152DCBF50038387A /* AQGridViewUpdateInfo.m in Sources */,
+				11ADCFB3152DCBF50038387A /* AQGridViewUpdateItem.m in Sources */,
+				11ADCFB4152DCBF50038387A /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
+				11ADCFB5152DCBF50038387A /* NSIndexSet+AQIsSetContiguous.m in Sources */,
+				11ADCFBB152DCBF50038387A /* UIColor+AQGridView.m in Sources */,
+				11ADCFBE152DD4B20038387A /* ComicGridViewController.m in Sources */,
+				11ADCFC1152DE75D0038387A /* ComicGridViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
