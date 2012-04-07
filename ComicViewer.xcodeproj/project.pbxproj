@@ -77,7 +77,8 @@
 		11ADCFBB152DCBF50038387A /* UIColor+AQGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFAC152DCBF50038387A /* UIColor+AQGridView.m */; };
 		11ADCFBE152DD4B20038387A /* ComicGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFBD152DD4B10038387A /* ComicGridViewController.m */; };
 		11ADCFC1152DE75D0038387A /* ComicGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADCFC0152DE75C0038387A /* ComicGridViewCell.m */; };
-		11ADD02E152F201D0038387A /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11ADD02D152F201B0038387A /* Cell.xib */; };
+		11ADD02E152F201D0038387A /* ComicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11ADD02D152F201B0038387A /* ComicCell.xib */; };
+		11ADD039153037B70038387A /* ComicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ADD038153037B60038387A /* ComicCell.m */; };
 		11BD614E151046100005568C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BD614D151046100005568C /* libsqlite3.dylib */; };
 		11BD6150151049370005568C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BD614F151049370005568C /* QuartzCore.framework */; };
 		11BD61F515137B510005568C /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD61F415137B510005568C /* Comic.m */; };
@@ -220,7 +221,9 @@
 		11ADCFBD152DD4B10038387A /* ComicGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicGridViewController.m; sourceTree = "<group>"; };
 		11ADCFBF152DE75B0038387A /* ComicGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicGridViewCell.h; sourceTree = "<group>"; };
 		11ADCFC0152DE75C0038387A /* ComicGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicGridViewCell.m; sourceTree = "<group>"; };
-		11ADD02D152F201B0038387A /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		11ADD02D152F201B0038387A /* ComicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComicCell.xib; sourceTree = "<group>"; };
+		11ADD037153037B60038387A /* ComicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicCell.h; sourceTree = "<group>"; };
+		11ADD038153037B60038387A /* ComicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicCell.m; sourceTree = "<group>"; };
 		11BD614D151046100005568C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		11BD614F151049370005568C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		11BD61F315137B510005568C /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
@@ -359,7 +362,9 @@
 				11ADCFBD152DD4B10038387A /* ComicGridViewController.m */,
 				11ADCFBF152DE75B0038387A /* ComicGridViewCell.h */,
 				11ADCFC0152DE75C0038387A /* ComicGridViewCell.m */,
-				11ADD02D152F201B0038387A /* Cell.xib */,
+				11ADD02D152F201B0038387A /* ComicCell.xib */,
+				11ADD037153037B60038387A /* ComicCell.h */,
+				11ADD038153037B60038387A /* ComicCell.m */,
 			);
 			path = ComicViewer;
 			sourceTree = "<group>";
@@ -770,7 +775,7 @@
 				11ADCFB8152DCBF50038387A /* AQGridSelectionGrayBlue.png in Resources */,
 				11ADCFB9152DCBF50038387A /* AQGridSelectionGreen.png in Resources */,
 				11ADCFBA152DCBF50038387A /* AQGridSelectionRed.png in Resources */,
-				11ADD02E152F201D0038387A /* Cell.xib in Resources */,
+				11ADD02E152F201D0038387A /* ComicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +857,7 @@
 				11ADCFBB152DCBF50038387A /* UIColor+AQGridView.m in Sources */,
 				11ADCFBE152DD4B20038387A /* ComicGridViewController.m in Sources */,
 				11ADCFC1152DE75D0038387A /* ComicGridViewCell.m in Sources */,
+				11ADD039153037B70038387A /* ComicCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
