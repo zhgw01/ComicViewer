@@ -13,6 +13,7 @@
 #define DEFAULTIMAGEWIDTH 125
 #define DEFAULTIMAGEHEIGHT 150
 
+
 @implementation ComicGridViewCell
 
 @synthesize volumnButton = _volumnButton;
@@ -22,6 +23,7 @@
 {
     label.highlightedTextColor = [UIColor whiteColor];
     label.font = [UIFont boldSystemFontOfSize: 12.0];
+    label.textAlignment = UITextAlignmentCenter;
     label.adjustsFontSizeToFitWidth = YES;
     label.minimumFontSize = 10.0;
     label.text = @"null";
@@ -95,7 +97,7 @@
     [_volumnButton setTitle:_item.newestVolumn forState:UIControlStateNormal];
     _date.text = [_item.updateDate description];
     
-    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 
@@ -119,6 +121,7 @@
 
 #pragma mark - Properties
 
+//layoutSubview maybe introduce performance issue
 
 - (void) layoutSubviews
 {
@@ -133,6 +136,7 @@
     CGFloat x = (self.bounds.size.width - imageWidth) / 2.0;
     CGFloat y = 10.0;
     _imageView.frame = CGRectMake(x, y, imageWidth, imageHeight);
+    _loadingView.center = _imageView.center;
     
     
     //CGRect bounds = CGRectInset( self.contentView.bounds, 10.0, 10.0 );
@@ -149,16 +153,16 @@
     
     [_date sizeToFit];
     CGRect frame = _date.frame;
-    frame.size.width = MIN(frame.size.width, bounds.size.width);
+    frame.size.width = MAX(frame.size.width, bounds.size.width);
     frame.origin.y = currentY - frame.size.height;
-    currentY = frame.origin.y - 2;
+    currentY = frame.origin.y - 10;
     frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
     _date.frame = frame;
     
     
     [_volumnButton.titleLabel sizeToFit];
     frame = _volumnButton.titleLabel.frame;
-    frame.size.width = MIN(frame.size.width, bounds.size.width);
+    frame.size.width = MAX(frame.size.width, bounds.size.width);
     frame.origin.y = currentY - frame.size.height;
     currentY = frame.origin.y - 10;
     frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
@@ -166,7 +170,7 @@
     
     [_title sizeToFit];
     frame = _title.frame;
-    frame.size.width = MIN(frame.size.width, bounds.size.width);
+    frame.size.width = MAX(frame.size.width, bounds.size.width);
     frame.origin.y = currentY - frame.size.height;
     currentY = frame.origin.y - 1;
     frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
@@ -196,6 +200,7 @@
     frame.origin.y = floorf((bounds.size.height - frame.size.height) * 0.5);
     _imageView.frame = frame;
 }
+
 
 
 @end

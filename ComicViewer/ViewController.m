@@ -108,10 +108,21 @@
      */
     
     
+    /*
     ComicGridViewController *gridController = [[ComicGridViewController alloc] initWithNibName:nil bundle:nil];
     [self.view addSubview:gridController.view];
     //gridController.comicUrl = [NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai_2.html"];
     [gridController performSelector:@selector(setComicUrl:) withObject:[NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai_2.html"] afterDelay:0.1];
+    */
+     
+     ComicGridViewController *gridController = [[ComicGridViewController alloc] initWithNibName:nil bundle:nil];
+    [gridController performSelector:@selector(setComicUrl:) withObject:[NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai_2.html"] afterDelay:0.1];
+    
+     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gridController];
+     navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+     navController.modalPresentationStyle = UIModalPresentationFullScreen;
+     [self presentModalViewController:navController animated:YES];
+
 }
 
 @end

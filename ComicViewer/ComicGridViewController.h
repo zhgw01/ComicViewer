@@ -21,4 +21,6 @@
 @property (nonatomic, retain) AQGridView *gridView;
 @property (nonatomic, retain) NSURL *comicUrl;
 
+- (void) clickNewestVolumn: (id) sender;
+
 @end

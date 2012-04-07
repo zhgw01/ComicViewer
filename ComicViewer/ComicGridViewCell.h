@@ -23,4 +23,5 @@
 @property (nonatomic, retain) ComicItem *item;
 @property (nonatomic, readonly) UIButton *volumnButton;
 
+
 @end

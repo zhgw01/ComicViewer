@@ -9,6 +9,9 @@
 #import "ComicGridViewController.h"
 #import "KangDmParser.h"
 #import "ComicGridViewCell.h"
+#import "VolumnListController.h"
+#import "VolumnPhotoSource.h"
+#import "EGOPhotoViewController.h"
 
 @implementation ComicGridViewController
 
@@ -127,6 +130,8 @@
     
     if ( cell == nil) {
         cell = [[[ComicGridViewCell alloc] initWithFrame:CGRectMake(0.0, 0.0, 150.0, 240.0) reuseIdentifier:cellIdentifier] autorelease];
+      //  [cell.volumnButton addTarget:self action:@selector(clickNewestVolumn:) forControlEvents:UIControlEventTouchUpInside];
+      //  [cell.volumnButton setTag:index];
     }
     
     //Configure the cell
@@ -148,7 +153,32 @@
 
 - (void) gridView:(AQGridView *)gridView didSelectItemAtIndex:(NSUInteger)index
 {
-    //pop the volumn list
+    ComicItem *item = [_items objectAtIndex:index];
+    
+    VolumnListController *listController = [[VolumnListController alloc] initWithStyle:UITableViewStylePlain];
+    listController.comicUrl = item.url;
+    
+    [self.navigationController pushViewController:listController animated:YES];
+    [listController release];
 }
+
+- (void) clickNewestVolumn:(id)sender
+{
+    UIButton *button = sender;
+    ComicItem *item = [_items objectAtIndex:button.tag];
+    NSURL *url = item.newestVolumnUrl;
+    VolumnPhotoSource *source = [[VolumnPhotoSource alloc] initWithVolumnURL:  url];
+    EGOPhotoViewController *photoConroller = [[EGOPhotoViewController alloc] initWithPhotoSource:source];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoConroller];
+    navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentModalViewController:navController animated:YES];
+    
+    [navController release];
+    [photoConroller release];
+    [source release];
+
+}
+
 
 @end
