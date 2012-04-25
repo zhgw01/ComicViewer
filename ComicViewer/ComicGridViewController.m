@@ -44,6 +44,7 @@
     
     [_loadingView startAnimating];
     ComicParser *parser = [[KangDmComicParser alloc] initWithUrl:_comicUrl];
+    [_items removeAllObjects];
     for (ComicItem *item in parser.list) {
         [_items addObject:item];
     }

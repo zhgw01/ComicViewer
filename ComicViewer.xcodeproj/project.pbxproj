@@ -97,6 +97,7 @@
 		11BD6227151499EE0005568C /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD6224151499EE0005568C /* HTMLNode.m */; };
 		11BD6228151499EE0005568C /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD6226151499EE0005568C /* HTMLParser.m */; };
 		11BD622B1514ACA60005568C /* VolumnController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD622A1514ACA50005568C /* VolumnController.m */; };
+		11D0BD001546893B007401BC /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D0BCFF1546893B007401BC /* CategoryView.m */; };
 		11F3F67D151581DE00F2D50B /* KangDmParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F67C151581DE00F2D50B /* KangDmParser.m */; };
 		11F3F6A01515966A00F2D50B /* KangDmParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F69F1515966A00F2D50B /* KangDmParserTests.m */; };
 		11F3F6B11521B57700F2D50B /* VolumnParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F6B01521B57700F2D50B /* VolumnParser.m */; };
@@ -260,6 +261,8 @@
 		11BD6226151499EE0005568C /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 		11BD62291514ACA50005568C /* VolumnController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumnController.h; sourceTree = "<group>"; };
 		11BD622A1514ACA50005568C /* VolumnController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumnController.m; sourceTree = "<group>"; };
+		11D0BCFE1546893B007401BC /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
+		11D0BCFF1546893B007401BC /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
 		11F3F67B151581DE00F2D50B /* KangDmParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KangDmParser.h; path = WebParser/KangDmParser.h; sourceTree = "<group>"; };
 		11F3F67C151581DE00F2D50B /* KangDmParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KangDmParser.m; path = WebParser/KangDmParser.m; sourceTree = "<group>"; };
 		11F3F69E1515966A00F2D50B /* KangDmParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KangDmParserTests.h; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 				11ADD02D152F201B0038387A /* ComicCell.xib */,
 				11ADD037153037B60038387A /* ComicCell.h */,
 				11ADD038153037B60038387A /* ComicCell.m */,
+				11D0BCFE1546893B007401BC /* CategoryView.h */,
+				11D0BCFF1546893B007401BC /* CategoryView.m */,
 			);
 			path = ComicViewer;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				11ADCFBE152DD4B20038387A /* ComicGridViewController.m in Sources */,
 				11ADCFC1152DE75D0038387A /* ComicGridViewCell.m in Sources */,
 				11ADD039153037B70038387A /* ComicCell.m in Sources */,
+				11D0BD001546893B007401BC /* CategoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
