@@ -30,6 +30,7 @@
     [self addSubview:button];
     
     _xPosition += button.frame.size.width + _padding;
+    self.contentSize = CGSizeMake(_xPosition, self.frame.size.height);
 }
 
 @end
