@@ -194,11 +194,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -217,6 +219,7 @@
     NSURL *url = [_listSource valueForKey:title];
     
     NSLog(@"click for title: %@", title);
+    [self.navigationController pushViewController:_gridController animated:YES];
     [_gridController setComicUrl:url];
 }
 

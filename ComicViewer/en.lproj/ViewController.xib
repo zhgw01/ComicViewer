@@ -190,9 +190,9 @@
 						<reference key="IBUIBackgroundColor" ref="621589254"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
-					<object class="IBUIScrollView" id="997189558">
+					<object class="IBUIScrollView" id="840673024">
 						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">286</int>
+						<int key="NSvFlags">278</int>
 						<string key="NSFrame">{{0, 120}, {768, 884}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
@@ -259,7 +259,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">contentView</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="997189558"/>
+						<reference key="destination" ref="840673024"/>
 					</object>
 					<int key="connectionID">27</int>
 				</object>
@@ -290,7 +290,7 @@
 							<reference ref="346131855"/>
 							<reference ref="736501949"/>
 							<reference ref="710463541"/>
-							<reference ref="997189558"/>
+							<reference ref="840673024"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -353,7 +353,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">26</int>
-						<reference key="object" ref="997189558"/>
+						<reference key="object" ref="840673024"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</array>

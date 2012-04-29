@@ -136,8 +136,9 @@
     }
     
     //Configure the cell
+    //ToDo: when item change, and image not downloading well, crash
     ComicItem *item = [_items objectAtIndex:index];
-    cell.item = item;
+    cell.item = item; 
 
     
     return cell;
@@ -160,7 +161,7 @@
     listController.comicUrl = item.url;
     
     [self.navigationController pushViewController:listController animated:YES];
-    [listController release];
+   // [listController release];
 }
 
 - (void) clickNewestVolumn:(id)sender
