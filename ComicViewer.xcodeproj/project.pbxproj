@@ -43,6 +43,8 @@
 		1124E4FE1525B42C004532B6 /* VolumnPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1124E4FD1525B42C004532B6 /* VolumnPhoto.m */; };
 		1124E5011525B453004532B6 /* VolumnPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1124E5001525B453004532B6 /* VolumnPhotoSource.m */; };
 		1124E5031525B797004532B6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1124E5021525B796004532B6 /* MessageUI.framework */; };
+		114E29D5154D36AD003D3135 /* SliderPageControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 114E29D2154D36AD003D3135 /* SliderPageControl.bundle */; };
+		114E29D6154D36AD003D3135 /* SliderPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 114E29D4154D36AD003D3135 /* SliderPageControl.m */; };
 		1178F5C2152882CD00FB11E9 /* VolumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178F5C1152882CC00FB11E9 /* VolumnListController.m */; };
 		117F1D68150637BD0071BC2A /* ZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 117F1D38150637BD0071BC2A /* ZoomView.m */; };
 		117F1D88150637C40071BC2A /* GridView-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 117F1D72150637C40071BC2A /* GridView-Background.png */; };
@@ -170,6 +172,9 @@
 		1124E4FF1525B452004532B6 /* VolumnPhotoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolumnPhotoSource.h; path = model/VolumnPhotoSource.h; sourceTree = "<group>"; };
 		1124E5001525B453004532B6 /* VolumnPhotoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolumnPhotoSource.m; path = model/VolumnPhotoSource.m; sourceTree = "<group>"; };
 		1124E5021525B796004532B6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		114E29D2154D36AD003D3135 /* SliderPageControl.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SliderPageControl.bundle; sourceTree = "<group>"; };
+		114E29D3154D36AD003D3135 /* SliderPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderPageControl.h; sourceTree = "<group>"; };
+		114E29D4154D36AD003D3135 /* SliderPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderPageControl.m; sourceTree = "<group>"; };
 		1178F5C0152882CC00FB11E9 /* VolumnListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumnListController.h; sourceTree = "<group>"; };
 		1178F5C1152882CC00FB11E9 /* VolumnListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumnListController.m; sourceTree = "<group>"; };
 		117F1D37150637BD0071BC2A /* ZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomView.h; sourceTree = "<group>"; };
@@ -337,6 +342,7 @@
 		111B7AE714FF9CEF009141C0 /* ComicViewer */ = {
 			isa = PBXGroup;
 			children = (
+				114E29D1154D36AD003D3135 /* SliderPageControl */,
 				11ADCF8F152DCBF50038387A /* AQGridView */,
 				1124E4FA1525B3B7004532B6 /* ComicModel */,
 				1124E4BA1525B309004532B6 /* EGOViewer */,
@@ -542,6 +548,16 @@
 			);
 			name = ComicModel;
 			sourceTree = "<group>";
+		};
+		114E29D1154D36AD003D3135 /* SliderPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				114E29D2154D36AD003D3135 /* SliderPageControl.bundle */,
+				114E29D3154D36AD003D3135 /* SliderPageControl.h */,
+				114E29D4154D36AD003D3135 /* SliderPageControl.m */,
+			);
+			path = SliderPageControl;
+			sourceTree = SOURCE_ROOT;
 		};
 		117F1CDC150637BD0071BC2A /* cooliris */ = {
 			isa = PBXGroup;
@@ -781,6 +797,7 @@
 				11ADCFB9152DCBF50038387A /* AQGridSelectionGreen.png in Resources */,
 				11ADCFBA152DCBF50038387A /* AQGridSelectionRed.png in Resources */,
 				11ADD02E152F201D0038387A /* ComicCell.xib in Resources */,
+				114E29D5154D36AD003D3135 /* SliderPageControl.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +881,7 @@
 				11ADCFC1152DE75D0038387A /* ComicGridViewCell.m in Sources */,
 				11ADD039153037B70038387A /* ComicCell.m in Sources */,
 				11D0BD001546893B007401BC /* CategoryView.m in Sources */,
+				114E29D6154D36AD003D3135 /* SliderPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

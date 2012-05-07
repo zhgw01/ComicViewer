@@ -16,6 +16,7 @@
 @implementation ComicGridViewController
 
 @synthesize gridView = _gridView;
+@synthesize pageSlider = _pageSlider;
 @synthesize comicUrl = _comicUrl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -81,6 +82,17 @@
         [_loadingView setCenter:CGPointMake(size.width / 2, size.height / 2)];
     }
     
+    if (!_pageSlider) {
+        _pageSlider =  [[SliderPageControl  alloc] initWithFrame:CGRectMake(0,[self.view bounds].size.height-20,[self.view bounds].size.width,20)];
+        [_pageSlider addTarget:self action:@selector(onPageChanged:) forControlEvents:UIControlEventValueChanged];
+        [_pageSlider setDelegate:self];
+        [_pageSlider setShowsHint:YES];
+        [self.view addSubview:_pageSlider];
+        [_pageSlider setNumberOfPages:6];
+        [_pageSlider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin |UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+
+    }
+    
 }
 
 
@@ -103,9 +115,11 @@
 
 - (void) dealloc
 {
-   // self.gridView = nil;
+    self.gridView = nil;
+    self.pageSlider = nil;
     [_items release];
     _items = nil;
+    [super dealloc];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -180,6 +194,17 @@
     [photoConroller release];
     [source release];
 
+}
+
+#pragma mark slider page control delegate
+- (NSString *)sliderPageController:(id)controller hintTitleForPage:(NSInteger)page
+{
+	return @"GridView";
+}
+
+- (void)onPageChanged:(id)sender
+{
+    
 }
 
 
