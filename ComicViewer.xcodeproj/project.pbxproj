@@ -43,6 +43,10 @@
 		1124E4FE1525B42C004532B6 /* VolumnPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1124E4FD1525B42C004532B6 /* VolumnPhoto.m */; };
 		1124E5011525B453004532B6 /* VolumnPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1124E5001525B453004532B6 /* VolumnPhotoSource.m */; };
 		1124E5031525B797004532B6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1124E5021525B796004532B6 /* MessageUI.framework */; };
+		1146862115625A530065A35A /* TypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1146862015625A530065A35A /* TypeView.m */; };
+		114686301563A6E20065A35A /* head-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1146862D1563A6E20065A35A /* head-background.png */; };
+		114686311563A6E20065A35A /* header-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1146862E1563A6E20065A35A /* header-background.png */; };
+		114686321563A6E20065A35A /* header-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1146862F1563A6E20065A35A /* header-bg.png */; };
 		114E29D5154D36AD003D3135 /* SliderPageControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 114E29D2154D36AD003D3135 /* SliderPageControl.bundle */; };
 		114E29D6154D36AD003D3135 /* SliderPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 114E29D4154D36AD003D3135 /* SliderPageControl.m */; };
 		1178F5C2152882CD00FB11E9 /* VolumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178F5C1152882CC00FB11E9 /* VolumnListController.m */; };
@@ -172,6 +176,11 @@
 		1124E4FF1525B452004532B6 /* VolumnPhotoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolumnPhotoSource.h; path = model/VolumnPhotoSource.h; sourceTree = "<group>"; };
 		1124E5001525B453004532B6 /* VolumnPhotoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolumnPhotoSource.m; path = model/VolumnPhotoSource.m; sourceTree = "<group>"; };
 		1124E5021525B796004532B6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1146861F15625A530065A35A /* TypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeView.h; sourceTree = "<group>"; };
+		1146862015625A530065A35A /* TypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeView.m; sourceTree = "<group>"; };
+		1146862D1563A6E20065A35A /* head-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head-background.png"; sourceTree = "<group>"; };
+		1146862E1563A6E20065A35A /* header-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-background.png"; sourceTree = "<group>"; };
+		1146862F1563A6E20065A35A /* header-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-bg.png"; sourceTree = "<group>"; };
 		114E29D2154D36AD003D3135 /* SliderPageControl.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SliderPageControl.bundle; sourceTree = "<group>"; };
 		114E29D3154D36AD003D3135 /* SliderPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderPageControl.h; sourceTree = "<group>"; };
 		114E29D4154D36AD003D3135 /* SliderPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderPageControl.m; sourceTree = "<group>"; };
@@ -342,6 +351,7 @@
 		111B7AE714FF9CEF009141C0 /* ComicViewer */ = {
 			isa = PBXGroup;
 			children = (
+				1146861115624EC00065A35A /* ComicCategory */,
 				114E29D1154D36AD003D3135 /* SliderPageControl */,
 				11ADCF8F152DCBF50038387A /* AQGridView */,
 				1124E4FA1525B3B7004532B6 /* ComicModel */,
@@ -549,6 +559,25 @@
 			name = ComicModel;
 			sourceTree = "<group>";
 		};
+		1146861115624EC00065A35A /* ComicCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1146861F15625A530065A35A /* TypeView.h */,
+				1146862015625A530065A35A /* TypeView.m */,
+			);
+			name = ComicCategory;
+			sourceTree = "<group>";
+		};
+		1146862C1563A6E20065A35A /* background */ = {
+			isa = PBXGroup;
+			children = (
+				1146862D1563A6E20065A35A /* head-background.png */,
+				1146862E1563A6E20065A35A /* header-background.png */,
+				1146862F1563A6E20065A35A /* header-bg.png */,
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
 		114E29D1154D36AD003D3135 /* SliderPageControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +600,7 @@
 		117F1D69150637C40071BC2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1146862C1563A6E20065A35A /* background */,
 				11F3F6B31522035B00F2D50B /* comicbook.png */,
 				117F1D72150637C40071BC2A /* GridView-Background.png */,
 				117F1D73150637C40071BC2A /* MovieView-Button-Disabled.png */,
@@ -798,6 +828,9 @@
 				11ADCFBA152DCBF50038387A /* AQGridSelectionRed.png in Resources */,
 				11ADD02E152F201D0038387A /* ComicCell.xib in Resources */,
 				114E29D5154D36AD003D3135 /* SliderPageControl.bundle in Resources */,
+				114686301563A6E20065A35A /* head-background.png in Resources */,
+				114686311563A6E20065A35A /* header-background.png in Resources */,
+				114686321563A6E20065A35A /* header-bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,6 +915,7 @@
 				11ADD039153037B70038387A /* ComicCell.m in Sources */,
 				11D0BD001546893B007401BC /* CategoryView.m in Sources */,
 				114E29D6154D36AD003D3135 /* SliderPageControl.m in Sources */,
+				1146862115625A530065A35A /* TypeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
