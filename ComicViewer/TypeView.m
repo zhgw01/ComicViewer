@@ -26,12 +26,16 @@
     self.layer.cornerRadius = 20;
     self.layer.borderColor = [UIColor underPageBackgroundColor].CGColor;
     self.layer.borderWidth = 1.0;
-    self.layer.shadowOffset = CGSizeMake(0.0, 2.0);
-    self.layer.shadowOpacity = 1.5f;
+    //it won't take effect when it
+  /*
+    self.layer.shadowOffset = CGSizeMake(10.0, 10.0);
+    self.layer.shadowOpacity = 0.1f;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowRadius = 2.5f;
     self.layer.anchorPoint = CGPointMake(0.5, 0.5);
-
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.bounds];
+    self.layer.shadowPath = path.CGPath;
+   */
 }
 
 
@@ -51,7 +55,7 @@
     [_titleView addSubview:background];
     
     self.headerLabel = [[[UILabel alloc] initWithFrame:_titleView.bounds] autorelease];
-    self.headerLabel.font = [UIFont systemFontOfSize:24];
+    self.headerLabel.font = [UIFont systemFontOfSize:32];
     self.headerLabel.backgroundColor = [UIColor clearColor];
     self.headerLabel.textColor = [UIColor whiteColor];
     self.headerLabel.shadowColor = [UIColor blackColor];
@@ -63,7 +67,7 @@
 
     CGRect contentRect = CGRectMake(0, titleRect.size.height, width, height - titleRect.size.height);
     _contentView = [[UIView alloc] initWithFrame:contentRect];
-    //_contentView.backgroundColor = [UIColor orangeColor];
+  //  _contentView.backgroundColor = [UIColor colorWithRed:246.0 / 255 green:1.0 blue:244.0 / 255.0 alpha:1.0f];
     [self addSubview:_contentView];
     
     [self setupLayer];
@@ -113,6 +117,7 @@
     CGRect contentRect = CGRectMake(0, titleRect.size.height, width, height - titleRect.size.height);
     _contentView.frame = contentRect;
 }
+
 
 
 #pragma mark - Properties

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "CoverController.h"
 
 @implementation AppDelegate
 
@@ -26,8 +27,12 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+  //  self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+  //  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+    CoverController *controller = [[CoverController alloc] init];
+    self.window.rootViewController = controller;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
