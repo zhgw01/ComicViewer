@@ -7,6 +7,7 @@
 //
 
 #import "CoverController.h"
+#import "CoverView.h"
 
 @implementation CoverController
 
@@ -36,13 +37,24 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"comic-background.jpg"]];
+    
+    CoverView *cover = [[CoverView alloc] initWithFrame:self.view.bounds];
+    cover.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    for (int i = 0; i < 4; ++i) {
+        NSString *title = [NSString stringWithFormat:@"T-%d",i];
+        [cover addTypeViewWithTitle:title data:nil];
+    }
+    
+    [self.view addSubview:cover];
+    [cover release];
 }
-*/
 
 - (void)viewDidUnload
 {
@@ -54,7 +66,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 @end

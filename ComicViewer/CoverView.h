@@ -10,9 +10,25 @@
 
 @interface CoverView : UIScrollView
 {
+    CGFloat		_topPadding;
+	CGFloat		_bottomPadding;
+	CGFloat		_leftPadding;
+	CGFloat		_rightPadding;
+    
+    NSMutableArray    *_typeviews;
+    
+    CGSize     _desiredCellSize;
+    CGSize     _actualCellSize;
+    CGFloat     _colPadding;
+    CGFloat     _rowPadding;
     
 }
 
-- (void) addTypeViewWithTitle:(NSString *) title data:(NSArray *) data delegate:(id<UITableViewDelegate>) delegate;
+@property (nonatomic) CGFloat topPadding, bottomPadding, leftPadding, rightPadding;
+
+- (void) addTypeViewWithTitle:(NSString *) title data:(NSDictionary *) data;
+
+- (void) setDesiredCellSize: (CGSize) desiredCellSize;
+- (CGSize) cellSize;
 
 @end
