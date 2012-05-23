@@ -11,7 +11,6 @@
 @interface CoverController : UIViewController
 {
     NSDictionary *_data;
-    NSMutableArray *_contentDelegates;
 }
 
 @end

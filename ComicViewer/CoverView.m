@@ -8,6 +8,7 @@
 
 #import "CoverView.h"
 #import "TypeView.h"
+#import "ContentController.h"
 
 @interface CoverView()
 - (void) fixDesiredCellSizeForWidth: (CGFloat) width;
@@ -38,6 +39,7 @@
     _rowPadding = DEFAULT_ROW_PADDING;
     
     _typeviews = [[NSMutableArray alloc] init];
+    _delegates = [[NSMutableArray alloc] init];
     
     self.backgroundColor = [UIColor clearColor];
     [self fixDesiredCellSizeForWidth:self.bounds.size.width];
@@ -56,6 +58,11 @@
 {
     [_typeviews release];
     _typeviews = nil;
+    
+    [_delegates release];
+    _delegates = nil;
+    
+    [super dealloc];
 }
 
 
@@ -66,6 +73,11 @@
     
     TypeView *type = [[TypeView alloc] initWithFrame:rect];
     [_typeviews addObject:type];
+    
+    ContentController *delegate = [[ContentController alloc] initWithData:data];
+    delegate.view.frame = type.contentView.bounds;
+    [type.contentView addSubview:delegate.view];
+    
     [self addSubview:type];
     [type release];
     

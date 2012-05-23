@@ -47,7 +47,6 @@
 		114686301563A6E20065A35A /* head-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1146862D1563A6E20065A35A /* head-background.png */; };
 		114686311563A6E20065A35A /* header-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1146862E1563A6E20065A35A /* header-background.png */; };
 		114686321563A6E20065A35A /* header-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1146862F1563A6E20065A35A /* header-bg.png */; };
-		114686691564E5590065A35A /* TypeDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 114686681564E5590065A35A /* TypeDetailView.m */; };
 		1146866C156504D50065A35A /* CoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1146866B156504D50065A35A /* CoverController.m */; };
 		1146866F15650BE80065A35A /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1146866E15650BE80065A35A /* ContentController.m */; };
 		114E29D5154D36AD003D3135 /* SliderPageControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 114E29D2154D36AD003D3135 /* SliderPageControl.bundle */; };
@@ -188,8 +187,6 @@
 		1146862D1563A6E20065A35A /* head-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head-background.png"; sourceTree = "<group>"; };
 		1146862E1563A6E20065A35A /* header-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-background.png"; sourceTree = "<group>"; };
 		1146862F1563A6E20065A35A /* header-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-bg.png"; sourceTree = "<group>"; };
-		114686671564E5590065A35A /* TypeDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDetailView.h; sourceTree = "<group>"; };
-		114686681564E5590065A35A /* TypeDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDetailView.m; sourceTree = "<group>"; };
 		1146866A156504D50065A35A /* CoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverController.h; sourceTree = "<group>"; };
 		1146866B156504D50065A35A /* CoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverController.m; sourceTree = "<group>"; };
 		1146866D15650BE80065A35A /* ContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController.h; sourceTree = "<group>"; };
@@ -582,8 +579,6 @@
 			children = (
 				1146861F15625A530065A35A /* TypeView.h */,
 				1146862015625A530065A35A /* TypeView.m */,
-				114686671564E5590065A35A /* TypeDetailView.h */,
-				114686681564E5590065A35A /* TypeDetailView.m */,
 				1146866A156504D50065A35A /* CoverController.h */,
 				1146866B156504D50065A35A /* CoverController.m */,
 				1146866D15650BE80065A35A /* ContentController.h */,
@@ -948,7 +943,6 @@
 				11D0BD001546893B007401BC /* CategoryView.m in Sources */,
 				114E29D6154D36AD003D3135 /* SliderPageControl.m in Sources */,
 				1146862115625A530065A35A /* TypeView.m in Sources */,
-				114686691564E5590065A35A /* TypeDetailView.m in Sources */,
 				1146866C156504D50065A35A /* CoverController.m in Sources */,
 				1146866F15650BE80065A35A /* ContentController.m in Sources */,
 				11824FB7156791AA00544534 /* CoverView.m in Sources */,

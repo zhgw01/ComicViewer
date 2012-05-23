@@ -16,6 +16,7 @@
 	CGFloat		_rightPadding;
     
     NSMutableArray    *_typeviews;
+    NSMutableArray    *_delegates;
     
     CGSize     _desiredCellSize;
     CGSize     _actualCellSize;

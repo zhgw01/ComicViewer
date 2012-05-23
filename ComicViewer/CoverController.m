@@ -11,11 +11,78 @@
 
 @implementation CoverController
 
+- (void) setupData
+{
+    NSMutableDictionary *tmpData = [[NSMutableDictionary alloc] init];
+    
+    //setup newest
+    NSDictionary *newest = [[NSDictionary alloc] initWithObjectsAndKeys:@"http://www.kangdm.com/zuixinlianzai.html",@"最新", nil];
+    [tmpData setObject:newest forKey:@"最新"];
+    [newest release];
+    
+    //setup alphabeta
+    NSMutableDictionary *alphabeta = [[NSMutableDictionary alloc] init];
+    for (char c = 'A'; c <= 'Z'; c++) {
+        NSString *title = [NSString stringWithFormat:@"%c", c];
+        NSString *urlString;
+        
+        if ('A' == c) {
+            urlString = [NSString stringWithFormat:@"http://www.kangdm.com/list_%c.htm", tolower(c)];
+        }
+        else {
+            urlString = [NSString stringWithFormat:@"http://www.kangdm.com/list_%c.htm", c];
+        }
+        NSURL *url = [NSURL URLWithString:urlString];
+        
+        [alphabeta setObject:url forKey:title];
+    }
+    [tmpData setObject:alphabeta forKey:@"字母"];
+    [alphabeta release];
+    
+    //setup type
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_dzgd_1.htm"] 
+             forKey:@"动作格斗"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_tyjj_1.htm"] 
+             forKey:@"体育竞技"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_snap_1.htm"] 
+             forKey:@"少女爱情"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_qsgx_1.htm"] 
+             forKey:@"轻松搞笑"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_lzjl_1.htm"] 
+             forKey:@"励志激励"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_kbgg_1.htm"] 
+             forKey:@"恐怖鬼怪"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_xyzt_1.htm"] 
+             forKey:@"悬疑侦探"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_khwl_1.htm"] 
+             forKey:@"科幻未来"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_yxtr_1.htm"] 
+             forKey:@"游戏同人"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_qcxy_1.htm"] 
+             forKey:@"青春校园"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_mhsh_1.htm"] 
+             forKey:@"魔幻神话"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_qhmx_1.htm"] 
+             forKey:@"奇幻冒险"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_shqg_1.htm"] 
+             forKey:@"生活情感"];
+    [dict setObject:[NSURL URLWithString:@"http://www.kangdm.com/comic_qtfl_1.htm"] 
+             forKey:@"其它分类"];   
+    
+    [tmpData setObject:dict forKey:@"类型"];
+    [dict release];
+    
+    _data = [tmpData copy];
+    [tmpData release];
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self setupData];
     }
     return self;
 }
@@ -47,9 +114,9 @@
     CoverView *cover = [[CoverView alloc] initWithFrame:self.view.bounds];
     cover.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    for (int i = 0; i < 4; ++i) {
-        NSString *title = [NSString stringWithFormat:@"T-%d",i];
-        [cover addTypeViewWithTitle:title data:nil];
+    NSArray *titles = [_data allKeys];
+    for (NSString *title in titles) {
+        [cover addTypeViewWithTitle:title data:[_data objectForKey:title]];
     }
     
     [self.view addSubview:cover];
