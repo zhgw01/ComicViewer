@@ -26,9 +26,14 @@
         
         if (1 == [_data count]) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            /*
             button.backgroundColor  = [UIColor colorWithRed:246.0 / 255 green:1.0 blue:244.0 / 255.0 alpha:1.0f];
             NSString *title = [_sortedKeys lastObject];
             [button setTitle:title forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
+            */
+            button.backgroundColor  = [UIColor colorWithRed:246.0 / 255 green:1.0 blue:244.0 / 255.0 alpha:1.0f];
+            [button setImage:[UIImage imageNamed:@"mark.png"] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
             _view = button;
         } else {

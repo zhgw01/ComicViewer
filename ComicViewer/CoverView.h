@@ -23,6 +23,8 @@
     CGFloat     _colPadding;
     CGFloat     _rowPadding;
     
+@private
+    BOOL    _sizeChanged;
 }
 
 @property (nonatomic) CGFloat topPadding, bottomPadding, leftPadding, rightPadding;

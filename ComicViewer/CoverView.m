@@ -16,6 +16,7 @@
 - (NSUInteger) numberOfItemsPerRow;
 - (CGRect) cellRectAtIndex: (NSUInteger) index;
 - (CGSize) entireSize;
+-(void) didRotate:(NSNotification *) notification;
 @end
 
 @implementation CoverView
@@ -43,6 +44,12 @@
     
     self.backgroundColor = [UIColor clearColor];
     [self fixDesiredCellSizeForWidth:self.bounds.size.width];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didRotate:) 
+                                                 name:@"UIDeviceOrientationDidChangeNotification" 
+                                               object:nil];
+    _sizeChanged = FALSE;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -73,6 +80,8 @@
     
     TypeView *type = [[TypeView alloc] initWithFrame:rect];
     [_typeviews addObject:type];
+    
+    type.headerLabel.text = title;
     
     ContentController *delegate = [[ContentController alloc] initWithData:data];
     delegate.view.frame = type.contentView.bounds;
@@ -165,17 +174,42 @@
 	return ( CGSizeMake(self.bounds.size.width, height) );
 }
 
+-(void) didRotate:(NSNotification *) notification
+{
+    _sizeChanged = TRUE;
+}
+
 -(void) layoutSubviews
 {
     [super layoutSubviews];
     
     [self fixDesiredCellSizeForWidth:self.bounds.size.width];
     
+    //self.contentSize = [self entireSize];
+    if (_sizeChanged) {
+        _sizeChanged = FALSE;
+        self.contentSize = [self entireSize];
+    }
+    
     NSUInteger total = [_typeviews count];
     for (NSUInteger index = 0; index < total; ++index) {
         UIView *view = [_typeviews objectAtIndex:index];
         CGRect newFrame = [self cellRectAtIndex:index];
         view.frame = newFrame;
+    }
+    
+    //Adjust the fit into the center
+    if ([self entireSize].height == self.bounds.size.height) {
+        UIView *view = [_typeviews lastObject];
+        CGFloat maxY = view.frame.origin.y + view.frame.size.height;
+        CGFloat adjustY = (_leftPadding + self.bounds.size.height - maxY) / 2.0 - _leftPadding;
+        NSAssert(adjustY >= 0, @"adjust Y should be positive here");
+        
+        for (UIView *view in _typeviews) {
+            CGRect newFrame = view.frame;
+            newFrame.origin.y += adjustY;
+            view.frame = newFrame;
+        }
     }
     
 }
