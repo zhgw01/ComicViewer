@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CoverViewDelegate<NSObject>
+@optional
+-(void)selectUrl:(NSURL *)url title:(NSString *)title;
+@end
+
+
 @interface ContentController : NSObject<UITableViewDataSource, UITableViewDelegate>
 {
     NSDictionary *_data;
     NSArray *_sortedKeys;
     UIView *_view;
+    id<CoverViewDelegate> _delegate;
 }
 
 @property (nonatomic, readonly)UIView *view;
+@property (nonatomic, retain) id<CoverViewDelegate> delegate;
 
 - (id) initWithData:(NSDictionary *)data;
 

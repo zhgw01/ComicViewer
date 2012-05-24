@@ -113,6 +113,7 @@
     
     CoverView *cover = [[CoverView alloc] initWithFrame:self.view.bounds];
     cover.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cover.coverviewDelegate = self;
     
     NSArray *titles = [_data allKeys];
     for (NSString *title in titles) {
@@ -135,5 +136,11 @@
     // Return YES for supported orientations
     return YES;
 }
+
+-(void)selectUrl:(NSURL *)url title:(NSString *)title
+{
+    NSLog(@"select url: %@", url);
+}
+
 
 @end

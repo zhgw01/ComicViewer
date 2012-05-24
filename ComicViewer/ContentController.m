@@ -7,6 +7,7 @@
 //
 
 #import "ContentController.h"
+#import "ComicGridViewController.h"
 
 @interface ContentController()
 -(void) clickButton: (UIButton *) sender;
@@ -15,6 +16,7 @@
 @implementation ContentController
 
 @synthesize view = _view;
+@synthesize delegate = _delegate;
 
 
 - (id) initWithData:(NSDictionary *)data
@@ -90,13 +92,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"You click table");
+    NSString *title = [_sortedKeys objectAtIndex:indexPath.row];
+    NSURL *url = [_data objectForKey:title];
+    if ([_delegate respondsToSelector:@selector(selectUrl:title:)]) {
+        [_delegate selectUrl:url title:title];
+    }
+    
 }
 
 #pragma mark - Button Delegate
 - (void) clickButton:(UIButton *)sender
 {
-    NSLog(@"Click Button");
+    NSString *title = [_sortedKeys lastObject];
+    NSURL *url = [_data objectForKey:title];
+    if ([_delegate respondsToSelector:@selector(selectUrl:title:)]) {
+        [_delegate selectUrl:url title:title];
+    }
+
 }
 
 

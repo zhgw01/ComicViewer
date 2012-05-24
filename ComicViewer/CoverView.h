@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContentController.h"
+
 
 @interface CoverView : UIScrollView
 {
@@ -23,11 +25,14 @@
     CGFloat     _colPadding;
     CGFloat     _rowPadding;
     
+    id<CoverViewDelegate> _coverviewDelegate;
+    
 @private
     BOOL    _sizeChanged;
 }
 
 @property (nonatomic) CGFloat topPadding, bottomPadding, leftPadding, rightPadding;
+@property (nonatomic, retain) id<CoverViewDelegate> coverviewDelegate;
 
 - (void) addTypeViewWithTitle:(NSString *) title data:(NSDictionary *) data;
 

@@ -22,6 +22,7 @@
 @implementation CoverView
 
 @synthesize topPadding=_topPadding, bottomPadding=_bottomPadding, leftPadding=_leftPadding, rightPadding=_rightPadding;
+@synthesize coverviewDelegate = _coverviewDelegate;
 
 #define DEFAULT_CELL_SIZE CGSizeMake(300.0, 400.0);
 #define DEFAULT_LEFT_PADDING 20
@@ -84,6 +85,7 @@
     type.headerLabel.text = title;
     
     ContentController *delegate = [[ContentController alloc] initWithData:data];
+    delegate.delegate = _coverviewDelegate;
     delegate.view.frame = type.contentView.bounds;
     [type.contentView addSubview:delegate.view];
     

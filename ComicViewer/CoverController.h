@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContentController.h"
 
-@interface CoverController : UIViewController
+@interface CoverController : UIViewController<CoverViewDelegate>
 {
     NSDictionary *_data;
 }
