@@ -13,7 +13,7 @@
 
 -(void) parseUrl: (NSURL *) url;
 -(void) appendDate:(NSArray *) data;
--(void) onPageChanged: (id) sender;
+-(void) onPageChanged: (SliderPageControl *) sender;
 -(void) onPageSizeChanged;
 -(void) loadDataForPageView: (NSInteger) index;
 -(NSArray *) dataForPage: (NSUInteger) index;
@@ -207,9 +207,15 @@
     return  result;
 }
 
--(void) onPageChanged:(id)sender
+-(void) onPageChanged:(SliderPageControl *)sender
 {
-    
+    int page = sender.currentPage;
+	
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [_scrollView scrollRectToVisible:frame animated:YES]; 
+
 }
 
 -(void) onPageSizeChanged
