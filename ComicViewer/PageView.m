@@ -30,6 +30,9 @@
             CellView *cell = nil;
             if (index < cellCount) {
                 cell = [_cells objectAtIndex:index];
+                if (!cell.superview) {
+                    [self addSubview:cell];
+                }
             } else {
                 cell = [[CellView alloc] initWithFrame:CGRectMake(0, 0, self.cellSize.width, self.cellSize.height)];
                 [self addSubview:cell];
@@ -40,8 +43,9 @@
             [cell setItem:[items objectAtIndex:index]];
         }
         
-        if (index < cellCount) {
+        while (index < cellCount) {
             [[_cells objectAtIndex:index] removeFromSuperview];
+            ++index;
         }
         
         [_items release];
@@ -132,6 +136,7 @@
 {
     self.cellSize = DEFAULT_CELLSIZE;
     self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"comic-background.jpg"]];
+    _cells = [[NSMutableArray alloc] init];
   //  [self setupTest];   
 }
 
