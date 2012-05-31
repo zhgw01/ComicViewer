@@ -50,6 +50,7 @@
         // Initialization code
 		[self setBackgroundColor:[UIColor clearColor]];
 		backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,frame.size.width,frame.size.height)];
+        backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[backgroundView setBackgroundColor:[UIColor clearColor]];
 		[self addSubview:backgroundView];
 		[backgroundView release];

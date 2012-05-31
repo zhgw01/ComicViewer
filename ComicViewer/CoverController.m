@@ -8,6 +8,8 @@
 
 #import "CoverController.h"
 #import "CoverView.h"
+#import "ComicGridViewController.h"
+#import "ListController.h"
 
 @implementation CoverController
 
@@ -16,7 +18,7 @@
     NSMutableDictionary *tmpData = [[NSMutableDictionary alloc] init];
     
     //setup newest
-    NSDictionary *newest = [[NSDictionary alloc] initWithObjectsAndKeys:@"http://www.kangdm.com/zuixinlianzai.html",@"最新", nil];
+    NSDictionary *newest = [[NSDictionary alloc] initWithObjectsAndKeys:[NSURL URLWithString:@"http://www.kangdm.com/zuixinlianzai.html"],@"最新", nil];
     [tmpData setObject:newest forKey:@"最新"];
     [newest release];
     
@@ -140,6 +142,12 @@
 -(void)selectUrl:(NSURL *)url title:(NSString *)title
 {
     NSLog(@"select url: %@", url);
+     
+    ListController *controller = [[ListController alloc] initWithUrl:url];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentModalViewController:navController animated:YES];
 }
 
 
