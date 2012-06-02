@@ -48,8 +48,11 @@
 @private
     NSURL *_url;
     NSURL *_baseUrl;
+    NSUInteger _totalPages;
 }
 
 - (id) initWithUrl: (NSURL *) url;
+
+@property (nonatomic, readonly) NSUInteger totalPages;
 
 @end

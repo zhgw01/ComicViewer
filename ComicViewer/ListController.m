@@ -73,7 +73,6 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
     
     //setup scrollView
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -158,10 +157,62 @@
 {
     //should only handle data here
     [_hud show:YES];
-    ComicParser *parser = [[KangDmComicParser alloc] initWithUrl:url];
+    KangDmComicParser *parser = [[KangDmComicParser alloc] initWithUrl:url];
     [_items addObjectsFromArray:parser.list];
-    [parser release];
     
+    NSString *urlString = [url absoluteString];
+    NSArray *lastComponent = [NSArray arrayWithObjects:@"_1.html", @"_1.htm", @".html", @".htm", nil];
+    NSString *prefixUrl = nil;
+    NSString *postfix = nil;
+    
+    
+    for (NSString *component in lastComponent) {
+        if ([urlString hasSuffix:component]) {
+            NSRange range = [urlString rangeOfString:component options:NSBackwardsSearch];
+            prefixUrl = [urlString substringToIndex:range.location];
+            range = [component rangeOfString:@"."];
+            postfix = [component substringFromIndex:range.location];
+        }
+    }
+    
+   // NSLog(@"Prefix Url: %@", prefixUrl);
+    /*
+    NSUInteger total = parser.totalPages;
+    for (NSUInteger i = 2; i <= total; ++i) {
+        NSString *nextUrl = [NSString stringWithFormat:@"%@_%d%@", prefixUrl, i, postfix];
+        NSLog(@"Next Url: %@", nextUrl);
+        //may be need an loading view to indicate the activity here, we can refer to hud
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSURL *url = [NSURL URLWithString:nextUrl];
+            ComicParser *comicParser = [[KangDmComicParser alloc] initWithUrl:url];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self appendDate:comicParser.list];
+            });
+            [comicParser release];
+        });
+    }
+     */
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableArray *comicItems = [[NSMutableArray alloc] initWithCapacity:300];
+        NSUInteger total = parser.totalPages;
+        for (NSUInteger i = 2; i <= total; ++i) {
+            NSString *nextUrl = [NSString stringWithFormat:@"%@_%d%@", prefixUrl, i, postfix];
+            NSURL *url = [NSURL URLWithString:nextUrl];
+            ComicParser *comicParser = [[KangDmComicParser alloc] initWithUrl:url];
+            [comicItems addObjectsFromArray:comicParser.list];
+            [comicParser release];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self appendDate:comicItems]; 
+        });
+        
+        [comicItems release];
+    });
+    
+    
+    [parser release];
     [_hud hide:YES];
 }
 

@@ -272,6 +272,8 @@ inline static NSString* keyForURL(NSURL* url) {
 
 @implementation KangDmComicParser
 
+@synthesize totalPages = _totalPages;
+
 - (id) initWithUrl:(NSURL *)url
 {
     if (self = [super init]) {
@@ -382,6 +384,20 @@ inline static NSString* keyForURL(NSURL* url) {
             
     }
     
+    HTMLNode *divPageNode = [bodyNode findChildWithAttribute:@"class" matchingName:@"page" allowPartial:NO];
+    if (divPageNode) {
+
+        NSString *rawContents = [divPageNode rawContents];
+        NSRange range = [rawContents rangeOfString:@"total_page="];
+        NSRange divideRange = [[rawContents substringFromIndex:range.location] rangeOfString:@";"];
+        NSRange statementRange = NSMakeRange(range.location, divideRange.location);
+        NSString *statement = [rawContents substringWithRange:statementRange];
+        NSString *pageString = [statement substringFromIndex:range.length];
+        _totalPages = [pageString integerValue];
+        
+       // NSLog(@"statement: %@", statement);
+       // NSLog(@"pages: %@", pageString);
+    }   
     
     [parser release];
 
