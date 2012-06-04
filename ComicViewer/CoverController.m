@@ -99,14 +99,6 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -126,11 +118,17 @@
     [cover release];
 }
 
-- (void)viewDidUnload
+
+- (void) viewWillAppear:(BOOL)animated
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -144,10 +142,8 @@
     NSLog(@"select url: %@", url);
      
     ListController *controller = [[ListController alloc] initWithUrl:url];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    navController.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentModalViewController:navController animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 

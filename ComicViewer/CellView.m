@@ -9,6 +9,7 @@
 #import "CellView.h"
 #import "UIImageView+AFNetworking.h"
 #import "KangDmParser.h"
+#import "VolumnListController.h"
 
 #define DEFAULTIMAGEWIDTH 125
 #define DEFAULTIMAGEHEIGHT 150
@@ -194,6 +195,22 @@
     
 }
 
+#pragma mark - Event Handling
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    VolumnListController *listController = [[VolumnListController alloc] initWithStyle:UITableViewStylePlain];
+    listController.comicUrl = self.item.url;
+
+    UINavigationController *navigationController = nil;
+    
+    if ([self.window.rootViewController isKindOfClass:[UINavigationController class]]) {
+        navigationController = (UINavigationController *) self.window.rootViewController;
+    }else {
+        navigationController = self.window.rootViewController.navigationController;
+    }
+    
+    [navigationController pushViewController:listController animated:YES];
+}
 
 
 @end

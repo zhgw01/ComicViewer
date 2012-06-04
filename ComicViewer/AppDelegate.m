@@ -31,7 +31,8 @@
   //  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     
     CoverController *controller = [[CoverController alloc] init];
-    self.window.rootViewController = controller;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
+    //self.window.rootViewController = controller;
     
     [self.window makeKeyAndVisible];
     return YES;
