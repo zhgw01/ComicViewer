@@ -177,22 +177,13 @@
     }
     
    // NSLog(@"Prefix Url: %@", prefixUrl);
-    /*
-    NSUInteger total = parser.totalPages;
-    for (NSUInteger i = 2; i <= total; ++i) {
-        NSString *nextUrl = [NSString stringWithFormat:@"%@_%d%@", prefixUrl, i, postfix];
-        NSLog(@"Next Url: %@", nextUrl);
-        //may be need an loading view to indicate the activity here, we can refer to hud
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSURL *url = [NSURL URLWithString:nextUrl];
-            ComicParser *comicParser = [[KangDmComicParser alloc] initWithUrl:url];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self appendDate:comicParser.list];
-            });
-            [comicParser release];
-        });
-    }
-     */
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    self.navigationItem.rightBarButtonItem = barItem;
+    [spinner release];
+    [barItem release];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *comicItems = [[NSMutableArray alloc] initWithCapacity:300];
         NSUInteger total = parser.totalPages;
@@ -207,6 +198,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self appendDate:comicItems]; 
+            self.navigationItem.rightBarButtonItem = nil;
         });
         
         [comicItems release];
