@@ -172,6 +172,7 @@
             prefixUrl = [urlString substringToIndex:range.location];
             range = [component rangeOfString:@"."];
             postfix = [component substringFromIndex:range.location];
+            break;
         }
     }
     
