@@ -42,7 +42,7 @@
 		self.alwaysBounceVertical = NO;
 		self.alwaysBounceHorizontal = NO;
 		self.bouncesZoom = YES;
-		self.bounces = YES;
+		self.bounces = NO;
 		self.scrollsToTop = NO;
 		self.backgroundColor = [UIColor blackColor];
 		self.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;

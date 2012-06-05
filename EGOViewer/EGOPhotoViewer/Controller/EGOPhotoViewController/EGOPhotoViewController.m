@@ -219,6 +219,11 @@
 	if (_popover) {
 		[self addObserver:self forKeyPath:@"contentSizeForViewInPopover" options:NSKeyValueObservingOptionNew context:NULL];
 	}
+    
+    if (!_barsHidden) {
+        NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithBool:YES], [NSNumber numberWithBool:YES], nil];
+        [self performSelector:@selector(setBarsHidden:animated:) withObject:params afterDelay:3];
+    }
 	
 }
 
@@ -471,11 +476,22 @@
 	}
 	
 	_barsHidden=hidden;
+    
+    if (!_barsHidden) {
+        NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithBool:YES], [NSNumber numberWithBool:YES], nil];
+        [self performSelector:@selector(setBarsHidden:animated:) withObject:params afterDelay:3];
+    }
 	
 }
 
 - (void)toggleBarsNotification:(NSNotification*)notification{
 	[self setBarsHidden:!_barsHidden animated:YES];
+  
+    /*
+    if (!_barsHidden) {
+        [self performSelector:@selector(toggleBarsNotification:) withObject:nil afterDelay:3];
+    }
+     */
 }
 
 

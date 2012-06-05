@@ -277,23 +277,41 @@
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.0001];
 	}
-		
+	
+	/*
 	CGFloat hfactor = self.imageView.image.size.width / self.frame.size.width;
 	CGFloat vfactor = self.imageView.image.size.height / self.frame.size.height;
 	
 	CGFloat factor = MAX(hfactor, vfactor);
-	
-	CGFloat newWidth = self.imageView.image.size.width / factor;
-	CGFloat newHeight = self.imageView.image.size.height / factor;
+     CGFloat newWidth = self.imageView.image.size.width / factor;
+     CGFloat newHeight = self.imageView.image.size.height / factor;
+     */
+    
+    CGFloat imageWidth = self.imageView.image.size.width;
+    CGFloat imageHeight = self.imageView.image.size.height;
+    CGFloat factor = imageWidth / self.frame.size.width;
+    
+    if (factor > 1.0) {
+        imageWidth = self.imageView.image.size.width / factor;
+        imageHeight = self.imageView.image.size.height / factor;
+    }
+        
+    CGFloat newWidth = imageWidth;
+    CGFloat newHeight = imageHeight;
+    if (newHeight > self.frame.size.height) {
+        newHeight = self.frame.size.height;
+    }
 	
 	CGFloat leftOffset = (self.frame.size.width - newWidth) / 2;
 	CGFloat topOffset = (self.frame.size.height - newHeight) / 2;
-	
+    	
 	self.scrollView.frame = CGRectMake(leftOffset, topOffset, newWidth, newHeight);
 	self.scrollView.layer.position = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
-	self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+	//self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+    self.scrollView.contentSize = CGSizeMake(imageWidth, imageHeight);
 	self.scrollView.contentOffset = CGPointMake(0.0f, 0.0f);
-	self.imageView.frame = self.scrollView.bounds;
+	//self.imageView.frame = self.scrollView.bounds;
+    self.imageView.frame = CGRectMake(0, 0, imageWidth, imageHeight);
 
 
 	if (animated) {
