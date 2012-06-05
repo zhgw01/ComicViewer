@@ -254,12 +254,19 @@
 -(void) onPageChanged:(SliderPageControl *)sender
 {
     int page = sender.currentPage;
-	
+
+    /*
     CGRect frame = _scrollView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
     [_scrollView scrollRectToVisible:frame animated:YES]; 
+     */
+    
+    _scrollView.contentOffset = CGPointMake(_scrollView.bounds.size.width * page, 0);
+    [self loadDataForPageView:page];
 
+        
+    
 }
 
 -(void) onPageSizeChanged
@@ -340,7 +347,7 @@
         currentView.items = [self dataForPage:index];
         
         _currentPage = index;
-        [_slider setCurrentPage:_currentPage animated:YES];
+        [_slider setCurrentPage:_currentPage animated:NO];
     }
 
 }
