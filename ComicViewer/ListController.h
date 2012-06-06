@@ -33,4 +33,6 @@
 
 -(id) initWithUrl:(NSURL *)url;
 
+@property (nonatomic) NSInteger currentPage;
+
 @end

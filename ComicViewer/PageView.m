@@ -31,6 +31,7 @@
             if (index < cellCount) {
                 cell = [_cells objectAtIndex:index];
                 if (!cell.superview) {
+                    cell.frame = CGRectMake(0, 0, self.cellSize.width, self.cellSize.height);
                     [self addSubview:cell];
                 }
             } else {

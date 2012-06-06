@@ -22,6 +22,8 @@
 
 @implementation ListController
 
+@synthesize currentPage = _currentPage;
+
 -(void) setup
 {
     _itemsPerPage = 1;
@@ -83,6 +85,7 @@
     _scrollView.pagingEnabled = YES;
     _scrollView.bounces = NO;
     _scrollView.alwaysBounceVertical = NO;
+    _scrollView.autoresizesSubviews = YES;
     [self.view addSubview:_scrollView];
    
     
@@ -112,22 +115,61 @@
     _hud.labelText = @"Loading";
     //[_hud showWhileExecuting:@selector(parseUrl:) onTarget:self withObject:_url animated:YES];
     [self parseUrl:_url];
+    
+    //add Observer
+    [self addObserver:self forKeyPath:@"view.frame" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+-(void) viewDidUnload
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super viewDidUnload];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
+    /*
     if (!CGSizeEqualToSize(_pageSize, _scrollView.bounds.size)) {
         _pageSize = _scrollView.bounds.size;
         [self onPageSizeChanged];
     }
+    */
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }
+
+#pragma mark - properties
+- (void) setCurrentPage:(NSInteger)currentPage
+{
+    if (_currentPage != currentPage) {
+        _currentPage = currentPage;
+        CGRect frame = _scrollView.frame;
+        frame.origin.x = frame.size.width * _currentPage;
+        frame.origin.y = 0;
+        [_scrollView scrollRectToVisible:frame animated:YES]; 
+
+    }
+}
+
+#pragma mark - Notification
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"view.frame"]) {
+        CGRect newFrame = [[object valueForKeyPath:keyPath] CGRectValue];
+        if (!CGSizeEqualToSize(_pageSize, newFrame.size)) {
+            _pageSize = newFrame.size;
+            [self onPageSizeChanged];
+        }
+
+    }
+}
+
 
 #pragma mark - UIScrollViewDelegate
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView
@@ -265,7 +307,7 @@
     _scrollView.contentOffset = CGPointMake(_scrollView.bounds.size.width * page, 0);
     [self loadDataForPageView:page];
 
-        
+    //self.currentPage = sender.currentPage;
     
 }
 
@@ -274,6 +316,7 @@
     [_pageDataCache removeAllObjects];
     
     PageView *page = (PageView *)[_scrollView viewWithTag:1];
+    NSUInteger oldItemsPerPage = _itemsPerPage;
     _itemsPerPage = page.cellsPerPage;
     _pages = (_items.count + _itemsPerPage - 1) / _itemsPerPage;
     _scrollView.contentSize = CGSizeMake(_pageSize.width * _pages, _pageSize.height);
@@ -282,6 +325,19 @@
     //may also need adjust frame here
     
     if (_currentPage != -1) {
+        //self.currentPage = (oldItemsPerPage * _currentPage) /_itemsPerPage;
+        
+        //It dosen't take effect for autorotate
+        /*
+        _currentPage = (oldItemsPerPage * _currentPage) /_itemsPerPage;
+        CGRect frame = _scrollView.frame;
+        frame.origin.x = frame.size.width * _currentPage;
+        frame.origin.y = 0;
+        [_scrollView scrollRectToVisible:frame animated:YES];
+        [_slider setCurrentPage:_currentPage animated:YES];
+         */
+        _currentPage = (oldItemsPerPage * _currentPage) /_itemsPerPage;
+        _scrollView.contentOffset = CGPointMake(_scrollView.bounds.size.width * _currentPage, 0);
         [self loadDataForPageView:_currentPage];
     } else {
      
