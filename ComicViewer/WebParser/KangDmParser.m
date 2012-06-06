@@ -365,16 +365,25 @@ inline static NSString* keyForURL(NSURL* url) {
             NSURL *volumnUrl = [NSURL URLWithString:volumn relativeToURL:_baseUrl];
             item.newestVolumnUrl = volumnUrl;
             
-            NSString *volumnTitle = [[volumnNode firstChild] rawContents];
+            
+            //NSString *volumnTitle = [[volumnNode firstChild] rawContents];
+            NSString *volumnTitle = @"无";
+            if ([[volumnNode children] count] != 0) {
+                volumnTitle = [[volumnNode firstChild] rawContents];
+            }
             item.newestVolumn = volumnTitle;
             
-            NSString *date = [[dateNode firstChild] rawContents];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-            NSDate *dateFromString = [dateFormatter dateFromString:date];
-            item.updateDate = dateFromString;
-            [dateFormatter release];
-            
+            if (dateNode) {
+                NSString *date = [[dateNode firstChild] rawContents];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSDate *dateFromString = [dateFormatter dateFromString:date];
+                item.updateDate = dateFromString;
+                [dateFormatter release];
+            } else {
+                item.updateDate = [NSDate date];
+            }
+                        
             [_list addObject:item];
             [item release];
             
