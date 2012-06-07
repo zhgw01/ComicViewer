@@ -56,6 +56,7 @@
 @synthesize scrollView=_scrollView;
 @synthesize loading=_loading;
 
+
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
 		
@@ -87,10 +88,24 @@
 		_activityView = [activityView retain];
 		[activityView release];
 		
+        /*
 		RotateGesture *gesture = [[RotateGesture alloc] initWithTarget:self action:@selector(rotate:)];
 		[self addGestureRecognizer:gesture];
 		[gesture release];
-		
+		*/
+        
+        /*
+        UISwipeGestureRecognizer *gesture;
+        gesture= [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe:)];
+        gesture.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self addGestureRecognizer:gesture];
+        [gesture release];
+        
+        gesture= [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe:)];
+        gesture.direction = UISwipeGestureRecognizerDirectionRight;
+        [self addGestureRecognizer:gesture];
+        [gesture release];
+        */
 	}
     return self;
 }
@@ -313,6 +328,7 @@
 	//self.imageView.frame = self.scrollView.bounds;
     self.imageView.frame = CGRectMake(0, 0, imageWidth, imageHeight);
 
+    _activityView.center = self.imageView.center;
 
 	if (animated) {
 		[UIView commitAnimations];
@@ -556,10 +572,11 @@
 		[animation setValue:[NSNumber numberWithInt:202] forKey:@"AnimationType"];
 		[self.layer addAnimation:animation forKey:@"RotateAnimation"];
 		
-	} 
-
-	
+	} 	
 }
+                                             
+                                            
+                             
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 	

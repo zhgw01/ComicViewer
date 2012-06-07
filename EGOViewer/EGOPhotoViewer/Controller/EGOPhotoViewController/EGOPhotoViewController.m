@@ -64,6 +64,7 @@
 	if (self = [super init]) {
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleBarsNotification:) name:@"EGOPhotoViewToggleBars" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moveNextNotification:) name:@"EGOPhotoViewMoveNext" object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoViewDidFinishLoading:) name:@"EGOPhotoDidFinishLoading" object:nil];
 		
 		self.hidesBottomBarWhenPushed = YES;
@@ -492,6 +493,10 @@
         [self performSelector:@selector(toggleBarsNotification:) withObject:nil afterDelay:3];
     }
      */
+}
+
+- (void)moveNextNotification:(NSNotification *)notification {
+    [self performSelector:@selector(moveForward:) withObject:nil];
 }
 
 

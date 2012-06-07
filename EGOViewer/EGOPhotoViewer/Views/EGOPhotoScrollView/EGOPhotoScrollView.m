@@ -105,6 +105,9 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"EGOPhotoViewToggleBars" object:nil];
 }
 
+- (void)moveNext {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EGOPhotoViewMoveNext" object:nil];
+}
 
 #pragma mark -
 #pragma mark Touches
@@ -118,10 +121,14 @@
 	UITouch *touch = [touches anyObject];
 	
 	if (touch.tapCount == 1) {
-		[self performSelector:@selector(toggleBars) withObject:nil afterDelay:.2];
+		//[self performSelector:@selector(toggleBars) withObject:nil afterDelay:.2];
+        [self performSelector:@selector(moveNext) withObject:nil afterDelay:.2];
 	} else if (touch.tapCount == 2) {
-		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(toggleBars) object:nil];
-		[self zoomRectWithCenter:[[touches anyObject] locationInView:self]];
+		//[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(toggleBars) object:nil];
+		//[self zoomRectWithCenter:[[touches anyObject] locationInView:self]];
+        //[self moveNext];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(moveNext) object:nil];
+        [self toggleBars];
 	}
 }
 
