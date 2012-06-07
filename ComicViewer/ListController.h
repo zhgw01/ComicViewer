@@ -29,6 +29,7 @@
 @private
     //cache
     NSMutableDictionary *_pageDataCache;
+    BOOL _shouldReverseForUrl;
 }
 
 -(id) initWithUrl:(NSURL *)url;

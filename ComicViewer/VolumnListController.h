@@ -17,5 +17,6 @@
 }
 
 @property (nonatomic, retain) NSURL *comicUrl;
+@property (nonatomic) BOOL reverse;
 
 @end

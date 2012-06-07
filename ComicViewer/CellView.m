@@ -27,6 +27,7 @@
 @synthesize volumnButton = _volumnButton;
 @synthesize item = _item;
 @synthesize contentView = _contentView;
+@synthesize shouldReverseForUrl = _shouldReverseForUrl;
 
 - (void) initLabel: (UILabel *)label
 {
@@ -76,6 +77,7 @@
   //  _title.backgroundColor = self.backgroundColor;
    
 
+    self.shouldReverseForUrl = NO;
     
     [self.contentView addSubview: _imageView];
     [self.contentView addSubview: _title];
@@ -200,6 +202,7 @@
 {
     VolumnListController *listController = [[VolumnListController alloc] initWithStyle:UITableViewStylePlain];
     listController.comicUrl = self.item.url;
+    listController.reverse = self.shouldReverseForUrl;
 
     UINavigationController *navigationController = nil;
     

@@ -20,4 +20,6 @@
 @property (nonatomic) CGSize cellSize;
 @property (nonatomic, readonly) NSUInteger cellsPerPage;
 
+@property (nonatomic) BOOL shouldReverseForUrl;
+
 @end

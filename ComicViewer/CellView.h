@@ -28,4 +28,6 @@
 
 @property (nonatomic, retain) UIImageView *contentView;
 
+@property (nonatomic) BOOL shouldReverseForUrl;
+
 @end

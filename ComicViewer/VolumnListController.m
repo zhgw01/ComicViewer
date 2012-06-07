@@ -17,6 +17,7 @@
 @implementation VolumnListController
 
 @synthesize comicUrl = _comicUrl;
+@synthesize reverse = _reverse;
 
 #pragma mark memory management
 - (id)initWithStyle:(UITableViewStyle)style
@@ -25,6 +26,7 @@
     if (self) {
         _items = [[NSMutableArray alloc] init];
         _comicUrl = nil;
+        self.reverse = NO;
     }
     return self;
 }
@@ -47,6 +49,10 @@
 
 -(void) setComicUrl:(NSURL *)comicUrl
 {
+    if ([[_comicUrl absoluteURL] isEqual:[comicUrl absoluteURL]]) {
+        return;
+    }
+    
     [_comicUrl release];
     _comicUrl = [comicUrl retain];
     
@@ -57,10 +63,21 @@
         VolumnListParser *parser = [[KangDmVolumnListParser alloc] initwithData:responseObject forUrl:_comicUrl error:nil];
         int insertIdx = [_items count];
         NSMutableArray *indexArray = [[NSMutableArray alloc] init];
-        for (VolumnItem *item in parser.list) {
-            [_items insertObject:item atIndex:insertIdx];
-            [indexArray addObject:[NSIndexPath indexPathForRow:insertIdx inSection:0]];
-            ++insertIdx;
+        if (self.reverse) {
+            NSUInteger listNumber = [parser.list count];
+            for (NSInteger i = listNumber - 1; i >= 0; --i) {
+                VolumnItem * item = [parser.list objectAtIndex:i];
+                [_items insertObject:item atIndex:insertIdx];
+                [indexArray addObject:[NSIndexPath indexPathForRow:insertIdx inSection:0]];
+                ++insertIdx;
+            }
+            
+        } else {
+            for (VolumnItem *item in parser.list) {
+                [_items insertObject:item atIndex:insertIdx];
+                [indexArray addObject:[NSIndexPath indexPathForRow:insertIdx inSection:0]];
+                ++insertIdx;
+            }
         }
         
         [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationRight];

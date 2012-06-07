@@ -17,6 +17,8 @@
 
 @synthesize items = _items;
 @synthesize cellSize = _cellSize;
+@synthesize  shouldReverseForUrl = _shouldReverseForUrl;
+
 
 - (void) setItems:(NSArray *)items
 {
@@ -40,6 +42,8 @@
                 [_cells addObject:cell];
                 [cell release]; 
             }
+            
+            cell.shouldReverseForUrl = self.shouldReverseForUrl;
             
             [cell setItem:[items objectAtIndex:index]];
         }

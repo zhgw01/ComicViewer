@@ -41,6 +41,11 @@
     if (self) {
         [self setup];
          _url = [url copy];
+        if ([[_url absoluteString] rangeOfString:@"zuixinlianzai"].location == NSNotFound) {
+            _shouldReverseForUrl = NO;
+        } else {
+            _shouldReverseForUrl = YES;
+        }
     }
     
     return self;
@@ -95,6 +100,7 @@
         PageView *page = [[PageView alloc] initWithFrame:frame];
         page.tag = i;
         page.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        page.shouldReverseForUrl = _shouldReverseForUrl;
         [_scrollView addSubview:page];
         [page release];
     }
