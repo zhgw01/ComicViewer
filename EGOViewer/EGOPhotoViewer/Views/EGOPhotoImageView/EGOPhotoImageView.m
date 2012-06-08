@@ -83,7 +83,7 @@
 		
 		UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 		activityView.frame = CGRectMake((CGRectGetWidth(self.frame) / 2) - 11.0f, CGRectGetHeight(self.frame) - 100.0f , 22.0f, 22.0f);
-		activityView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+		//activityView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
 		[self addSubview:activityView];
 		_activityView = [activityView retain];
 		[activityView release];
@@ -328,7 +328,7 @@
 	//self.imageView.frame = self.scrollView.bounds;
     self.imageView.frame = CGRectMake(0, 0, imageWidth, imageHeight);
 
-    _activityView.center = self.imageView.center;
+    _activityView.center = self.scrollView.center;
 
 	if (animated) {
 		[UIView commitAnimations];
