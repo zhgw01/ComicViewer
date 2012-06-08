@@ -739,6 +739,12 @@
 }
 
 - (void)moveToPhotoAtIndex:(NSInteger)index animated:(BOOL)animated {
+    
+    if (index >= [self.photoSource numberOfPhotos]) {
+        [self done:nil];
+        return;
+    }
+    
 	NSAssert(index < [self.photoSource numberOfPhotos] && index >= 0, @"Photo index passed out of bounds");
 	
 	_pageIndex = index;
